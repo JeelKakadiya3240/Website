@@ -1,0 +1,13 @@
+# Hide files from GitHub language detection
+*.html linguist-documentation
+*.css linguist-documentation
+*.js linguist-documentation
+*.png linguist-vendored
+*.gif linguist-vendored
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.svg linguist-vendored
+*.pdf linguist-vendored
+
+# Mark the entire repository as documentation
+* linguist-documentation

@@ -1,0 +1,76 @@
+name: Simple HTML Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check if files exist
+      run: |
+        echo "🔍 Checking if required files exist..."
+        
+        # Check if index.html exists
+        if [ -f "index.html" ]; then
+          echo "✅ index.html found"
+        else
+          echo "❌ index.html not found"
+          exit 1
+        fi
+        
+        # Check if public folder exists
+        if [ -d "public" ]; then
+          echo "✅ public folder found"
+        else
+          echo "❌ public folder not found"
+          exit 1
+        fi
+        
+        # Check if profile image exists
+        if [ -f "public/profile.png" ]; then
+          echo "✅ profile.png found"
+        else
+          echo "⚠️ profile.png not found"
+        fi
+        
+        echo "✅ Basic file check completed!"
+        
+    - name: Check HTML basics
+      run: |
+        echo "🔍 Checking basic HTML structure..."
+        
+        # Check if HTML has DOCTYPE
+        if grep -q "<!DOCTYPE html>" index.html; then
+          echo "✅ DOCTYPE found"
+        else
+          echo "⚠️ DOCTYPE not found"
+        fi
+        
+        # Check if HTML has title
+        if grep -q "<title>" index.html; then
+          echo "✅ Title tag found"
+        else
+          echo "⚠️ Title tag not found"
+        fi
+        
+        # Check if HTML has body
+        if grep -q "<body" index.html; then
+          echo "✅ Body tag found"
+        else
+          echo "⚠️ Body tag not found"
+        fi
+        
+        echo "✅ Basic HTML check completed!"
+        
+    - name: Success message
+      run: |
+        echo "🎉 Simple HTML check completed successfully!"
+        echo "Your website files are ready for deployment!"

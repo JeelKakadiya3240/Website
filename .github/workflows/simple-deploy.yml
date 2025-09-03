@@ -1,0 +1,94 @@
+name: Simple Deploy
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Check website files
+      run: |
+        echo "🔍 Checking website files..."
+        
+        # List all files
+        echo "📁 Files in repository:"
+        ls -la
+        
+        # Check main HTML file
+        if [ -f "index.html" ]; then
+          echo "✅ index.html found"
+          echo "📏 File size: $(wc -c < index.html) bytes"
+        else
+          echo "❌ index.html not found"
+          exit 1
+        fi
+        
+        # Check public folder
+        if [ -d "public" ]; then
+          echo "✅ public folder found"
+          echo "📁 Contents of public folder:"
+          ls -la public/
+        else
+          echo "❌ public folder not found"
+          exit 1
+        fi
+        
+        echo "✅ Website files check completed!"
+        
+    - name: Create deployment package
+      run: |
+        echo "📦 Creating deployment package..."
+        
+        # Create deploy folder
+        mkdir -p deploy
+        
+        # Copy main HTML file
+        cp index.html deploy/
+        
+        # Copy public assets
+        cp -r public deploy/
+        
+        # Create a simple status file
+        echo "Website deployed successfully at $(date)" > deploy/status.txt
+        echo "Deployment package created by GitHub Actions" >> deploy/status.txt
+        
+        # Show what we're deploying
+        echo "📋 Deployment package contents:"
+        find deploy -type f | sort
+        
+        echo "✅ Deployment package ready!"
+        
+    - name: Upload to GitHub Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './deploy'
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+      
+    - name: Success message
+      run: |
+        echo "🎉 Deployment completed successfully!"
+        echo "🌐 Your website is now live!"
+        echo "📅 Deployed at: $(date)"
+        echo "🚀 Simple CI/CD pipeline working perfectly!"

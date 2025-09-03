@@ -1,0 +1,30 @@
+# GitHub Linguist configuration
+# This file controls how GitHub displays language statistics
+
+# Mark specific file types as documentation (won't count in language stats)
+documentation:
+  - "*.html"
+  - "*.css"
+  - "*.js"
+  - "*.md"
+  - "*.txt"
+
+# Mark image and asset files as vendored (won't count in language stats)
+vendored:
+  - "*.png"
+  - "*.gif"
+  - "*.jpg"
+  - "*.jpeg"
+  - "*.svg"
+  - "*.pdf"
+
+# Mark specific directories as documentation
+documentation_directories:
+  - "public/"
+  - ".github/"
+
+# Override language detection for specific files
+language_overrides:
+  "*.html": "HTML"
+  "*.css": "CSS"
+  "*.js": "JavaScript"
