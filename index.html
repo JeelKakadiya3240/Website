@@ -176,8 +176,11 @@
                 <img src="public/profile.png" alt="Jeel Kakadiya profile photo" class="rounded-full shadow-lg mb-6 border-4 border-indigo-200 dark:border-indigo-700 object-cover w-36 h-36">
                 <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                     <span class="block">Hi, I'm</span>
-                    <span class="block text-indigo-600 dark:text-indigo-400 min-h-[1.5em] flex items-center justify-center">
-                        <span id="typewriter" class="inline-block"></span>
+                    <span class="block text-indigo-600 dark:text-indigo-400">
+                        Jeel Kakadiya
+                    </span>
+                    <span class="block text-indigo-600 dark:text-indigo-400 min-h-[1.5em] flex items-center justify-center mt-2 text-2xl sm:text-3xl md:text-4xl">
+                        <span id="typewriter-subtitle" class="inline-block"></span>
                         <span class="typewriter-cursor text-indigo-600 dark:text-indigo-400">|</span>
                     </span>
                 </h1>
@@ -806,20 +809,50 @@
     </footer>
 
     <script>
-        // Typewriter effect
-        const typewriterText = "Jeel Kakadiya";
-        const typewriterElement = document.getElementById("typewriter");
-        let typewriterIndex = 0;
+        // Typewriter effect with erase and replace
+        const texts = ["Software Developer @ ASU", "Experienced in React, TypeScript, Next.js, Python, AWS, Supabase..."];
+        const typewriterElement = document.getElementById("typewriter-subtitle");
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
 
-        function typewriter() {
-            if (typewriterIndex < typewriterText.length) {
-                typewriterElement.textContent += typewriterText.charAt(typewriterIndex);
-                typewriterIndex++;
-                setTimeout(typewriter, 100);
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                // Erase character
+                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    // Finished erasing, move to next text
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(typeWriter, 500);
+                } else {
+                    setTimeout(typeWriter, 50);
+                }
+            } else {
+                // Type character
+                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                
+                if (charIndex === currentText.length) {
+                    // Finished typing, wait then start erasing
+                    setTimeout(() => {
+                        isDeleting = true;
+                        typeWriter();
+                    }, 2000);
+                } else {
+                    setTimeout(typeWriter, 100);
+                }
             }
         }
 
-        typewriter();
+        // Start typing after a short delay
+        setTimeout(() => {
+            typeWriter();
+        }, 500);
 
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
