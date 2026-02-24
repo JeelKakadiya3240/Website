@@ -13,7 +13,16 @@
         gtag('config', 'G-5BG9Y5WFEK');
     </script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+        body { font-family: var(--font-body); }
+        h1, h2, h3, .font-display { font-family: var(--font-display); }
         .typewriter-cursor {
             animation: blink 0.8s infinite;
         }
@@ -123,11 +132,51 @@
         .dark .experience-bullet {
             background-color: #9ca3af !important;
         }
+
+        /* 3D / Interactive UI */
+        .hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .nav-glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(255,255,255,0.7); }
+        .dark .nav-glass { background: rgba(17,24,39,0.8); }
+        .card-3d { transform-style: preserve-3d; perspective: 1000px; transition: transform 0.15s ease-out; will-change: transform; }
+        .card-3d-inner { transform: translateZ(20px); }
+        .btn-magnetic { transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .smooth-scroll-content { overflow-x: hidden; }
+        .gradient-mesh { background: radial-gradient(at 40% 20%, rgba(99,102,241,0.25) 0%, transparent 50%), radial-gradient(at 80% 0%, rgba(139,92,246,0.2) 0%, transparent 50%), radial-gradient(at 0% 50%, rgba(236,72,153,0.15) 0%, transparent 50%); }
+
+        /* Hero 3D / UI-UX showcase */
+        .hero-glass-card {
+            background: rgba(255,255,255,0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(99,102,241,0.15), 0 0 0 1px rgba(255,255,255,0.5) inset;
+            transform-style: preserve-3d;
+            perspective: 1200px;
+        }
+        .dark .hero-glass-card {
+            background: rgba(17,24,39,0.5);
+            border-color: rgba(255,255,255,0.08);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05) inset;
+        }
+        .hero-profile-wrap {
+            transform-style: preserve-3d;
+            perspective: 800px;
+            display: inline-block;
+        }
+        .hero-profile-wrap img {
+            border-radius: 50%;
+            box-shadow: 0 25px 50px -12px rgba(99,102,241,0.35), 0 0 0 4px rgba(255,255,255,0.8);
+            transition: transform 0.2s ease-out;
+        }
+        .dark .hero-profile-wrap img { box-shadow: 0 25px 50px -12px rgba(99,102,241,0.25), 0 0 0 4px rgba(255,255,255,0.1); }
+        .hero-parallax { transition: transform 0.12s ease-out; will-change: transform; }
+        .hero-entrance { opacity: 0; transform: translateY(24px); }
     </style>
 </head>
-<body class="smooth-scroll">
+<body class="smooth-scroll smooth-scroll-content">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 z-50 transition-transform duration-300">
+    <nav id="navbar" class="fixed top-0 left-0 w-full nav-glass border-b border-gray-200/50 dark:border-gray-700/50 z-50 transition-transform duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
@@ -177,43 +226,48 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 overflow-hidden gradient-mesh">
+        <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
         <div class="pointer-events-none absolute inset-0 z-0 hero-background"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <div class="flex flex-col items-center text-center">
-                <img src="public/profile.png" alt="Jeel Kakadiya profile photo" class="rounded-full shadow-lg mb-6 border-4 border-indigo-200 dark:border-indigo-700 object-cover w-36 h-36">
-                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-                    <span class="block">Hi, I'm</span>
-                    <span class="block text-indigo-600 dark:text-indigo-400">
-                        Jeel Kakadiya
-                    </span>
-                    <span class="block text-indigo-600 dark:text-indigo-400 min-h-[1.5em] flex items-center justify-center mt-2 text-2xl sm:text-3xl md:text-4xl">
-                        <span id="typewriter-subtitle" class="inline-block"></span>
-                        <span class="typewriter-cursor text-indigo-600 dark:text-indigo-400">|</span>
-                    </span>
-                </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    A passionate Software Developer specializing in building exceptional digital experiences.
-                    Currently pursuing Master's in Computer Science at Arizona State University.
-                </p>
-                <div class="mt-8 max-w-md mx-auto flex flex-col sm:flex-row sm:justify-center gap-4">
-                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-white/40 dark:bg-gray-800/40 backdrop-blur-md border border-white/60 dark:border-gray-700/60 text-indigo-700 dark:text-indigo-200 hover:bg-white/60 dark:hover:bg-gray-800/60 hover:shadow-xl transition-all duration-200 gap-2 group">
-                        Get in touch
-                    </a>
-                    <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-white/40 dark:bg-gray-800/40 backdrop-blur-md border border-white/60 dark:border-gray-700/60 text-indigo-700 dark:text-indigo-200 hover:bg-white/60 dark:hover:bg-gray-800/60 hover:shadow-xl transition-all duration-200 gap-2 group">
-                        View Projects
-                    </a>
+            <div id="hero-glass-card" class="hero-glass-card hero-entrance px-8 py-10 sm:px-12 sm:py-14 md:px-16 md:py-16 max-w-2xl">
+                <div class="flex flex-col items-center text-center">
+                    <div id="hero-profile-wrap" class="hero-profile-wrap mb-6">
+                        <img id="hero-profile-img" src="public/profile.png" alt="Jeel Kakadiya profile photo" class="border-4 border-indigo-200 dark:border-indigo-700 object-cover w-32 h-32 sm:w-36 sm:h-36">
+                    </div>
+                    <h1 class="font-display text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                        <span id="hero-hi" class="hero-entrance block">Hi, I'm</span>
+                        <span id="hero-name" class="hero-entrance block text-indigo-600 dark:text-indigo-400">
+                            Jeel Kakadiya
+                        </span>
+                        <span id="hero-title-wrap" class="hero-entrance block text-indigo-600 dark:text-indigo-400 min-h-[1.5em] flex items-center justify-center mt-2 text-2xl sm:text-3xl md:text-4xl">
+                            <span id="typewriter-subtitle" class="inline-block"></span>
+                            <span class="typewriter-cursor text-indigo-600 dark:text-indigo-400">|</span>
+                        </span>
+                    </h1>
+                    <p id="hero-desc" class="hero-entrance mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                        A passionate Software Developer specializing in building exceptional digital experiences.
+                        Currently pursuing Master's in Computer Science at Arizona State University.
+                    </p>
+                    <div id="hero-btns" class="hero-entrance mt-8 max-w-md mx-auto flex flex-col sm:flex-row sm:justify-center gap-4">
+                        <a href="#contact" class="btn-magnetic inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-white dark:border-gray-700/50 text-indigo-700 dark:text-indigo-200 hover:bg-white dark:hover:bg-gray-800 hover:shadow-xl transition-all duration-200 gap-2 group">
+                            Get in touch
+                        </a>
+                        <a href="#projects" class="btn-magnetic inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-indigo-600 text-white hover:bg-indigo-500 hover:shadow-xl transition-all duration-200 gap-2 group">
+                            View Projects
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white dark:bg-gray-900 pt-20">
+    <section id="about" class="section-reveal py-20 bg-white dark:bg-gray-900 pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
                 <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">About</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
                     A bit about me
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
@@ -261,11 +315,11 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-white dark:bg-gray-900">
+    <section id="experience" class="section-reveal py-20 bg-white dark:bg-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase mb-2">WORK EXPERIENCE</h2>
-          <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
             Professional Experience
           </p>
         </div>
@@ -273,7 +327,7 @@
         <!-- Experience Items -->
         <div class="space-y-8">
           <!-- Cypress Bridge Group -->
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="stagger-item card-3d bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
               <div class="mb-3 sm:mb-0">
                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
@@ -303,7 +357,7 @@
           </div>
 
           <!-- Arizona State University -->
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="stagger-item card-3d bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
               <div class="mb-3 sm:mb-0">
                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
@@ -337,7 +391,7 @@
           </div>
 
           <!-- VBI Infotech -->
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="stagger-item card-3d bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
               <div class="mb-3 sm:mb-0">
                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
@@ -370,11 +424,11 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="skills" class="section-reveal py-20 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">Skills</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
                     Technical Expertise
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
@@ -384,9 +438,9 @@
 
             <div class="mt-10">
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="bg-white dark:bg-gray-900 overflow-hidden shadow rounded-lg">
+                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
                         <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
                                 Programming Languages
                             </h3>
                             <div class="mt-4 flex flex-wrap gap-2">
@@ -400,9 +454,9 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 overflow-hidden shadow rounded-lg">
+                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
                         <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
                                 Web Technologies
                             </h3>
                             <div class="mt-4 flex flex-wrap gap-2">
@@ -416,9 +470,9 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 overflow-hidden shadow rounded-lg">
+                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
                         <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
                                 Cloud &amp; DevOps
                             </h3>
                             <div class="mt-4 flex flex-wrap gap-2">
@@ -432,9 +486,9 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 overflow-hidden shadow rounded-lg">
+                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
                         <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
                                 Databases
                             </h3>
                             <div class="mt-4 flex flex-wrap gap-2">
@@ -446,9 +500,9 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 overflow-hidden shadow rounded-lg">
+                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
                         <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
                                 Tools &amp; Frameworks
                             </h3>
                             <div class="mt-4 flex flex-wrap gap-2">
@@ -467,17 +521,17 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" class="section-reveal py-20 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase mb-2">Featured Projects</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
                     Featured Projects
                 </p>
             </div>
             <div class="grid gap-8 md:grid-cols-2">
                 <!-- Smart DART -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
+                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Smart DART</h3>
                     <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">Arizona State University</p>
                     <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
@@ -491,7 +545,7 @@
                 </div>
 
                 <!-- Resume.io -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
+                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Resume.io</h3>
                     <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">AI-Powered Resume Analysis</p>
                     <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
@@ -505,7 +559,7 @@
                 </div>
 
                 <!-- Email Automation Script -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
+                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email Automation Script</h3>
                     <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">Bulk Email Tool</p>
                     <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
@@ -519,7 +573,7 @@
                 </div>
 
                 <!-- AI Voice Order Assistant -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
+                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI Voice Order Assistant</h3>
                     <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">Restaurant Order &amp; Support System</p>
                     <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
@@ -533,7 +587,7 @@
                 </div>
 
                 <!-- Cypress CMS Hospital Benchmarks -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
+                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cypress Hospital Benchmarks</h3>
                     <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">USA CMS Data &amp; Analytics</p>
                     <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
@@ -550,10 +604,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" class="section-reveal py-20 bg-white dark:bg-gray-900">
       <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">CONTACT</h2>
+          <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl font-display">CONTACT</h2>
           <div class="mt-4 flex justify-center">
             <div class="w-24 h-1 bg-indigo-600 dark:bg-indigo-400 rounded-full"></div>
           </div>
@@ -566,14 +620,14 @@
             href="https://www.linkedin.com/in/jeelkakadiya/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-lg shadow hover:bg-indigo-700 transition-colors duration-200"
+            class="btn-magnetic inline-flex items-center gap-3 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-lg shadow hover:bg-indigo-700 transition-colors duration-200"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
             Connect on LinkedIn
           </a>
           <a
             href="mailto:jkakadi1@asu.edu"
-            class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gray-100 dark:bg-gray-800 text-indigo-700 dark:text-indigo-200 font-semibold text-lg shadow hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors duration-200"
+            class="btn-magnetic inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gray-100 dark:bg-gray-800 text-indigo-700 dark:text-indigo-200 font-semibold text-lg shadow hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors duration-200"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
             Email Me
@@ -593,150 +647,169 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
     <script>
-        // Typewriter effect with erase and replace
-        const texts = ["Software Developer @ ASU", "Experienced in React, TypeScript, Next.js, Python, AWS, Supabase..."];
-        const typewriterElement = document.getElementById("typewriter-subtitle");
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function typeWriter() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                // Erase character
-                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                
-                if (charIndex === 0) {
-                    // Finished erasing, move to next text
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                    setTimeout(typeWriter, 500);
-                } else {
-                    setTimeout(typeWriter, 50);
-                }
-            } else {
-                // Type character
-                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                
-                if (charIndex === currentText.length) {
-                    // Finished typing, wait then start erasing
-                    setTimeout(() => {
-                        isDeleting = true;
-                        typeWriter();
-                    }, 2000);
-                } else {
-                    setTimeout(typeWriter, 100);
-                }
-            }
+        // ——— GSAP ScrollTrigger first (so content shows even if Lenis fails) ———
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.section-reveal').forEach(section => {
+                gsap.from(section, {
+                    opacity: 0, y: 56, duration: 0.9, ease: 'power3.out',
+                    scrollTrigger: { trigger: section, start: 'top 85%', toggleActions: 'play none none none' }
+                });
+            });
+            gsap.utils.toArray('section').forEach(section => {
+                const items = section.querySelectorAll('.stagger-item');
+                items.forEach((el, i) => {
+                    gsap.from(el, {
+                        opacity: 0, y: 40, duration: 0.6, delay: i * 0.08, ease: 'power2.out',
+                        scrollTrigger: { trigger: section, start: 'top 80%' }
+                    });
+                });
+            });
         }
 
-        // Start typing after a short delay
-        setTimeout(() => {
-            typeWriter();
-        }, 500);
+        // ——— Lenis smooth scroll (optional; page works without it) ———
+        var lenis = null;
+        try {
+            if (typeof Lenis !== 'undefined') {
+                lenis = new Lenis({ lerp: 0.08, duration: 1.2 });
+                function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+                requestAnimationFrame(raf);
+            }
+        } catch (e) { console.warn('Lenis not loaded, using native scroll'); }
 
-        // Mobile menu toggle
+        // ——— Three.js hero background ———
+        (function() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas || typeof THREE === 'undefined') return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            camera.position.z = 5;
+
+            const geometry = new THREE.TorusKnotGeometry(0.8, 0.25, 128, 32);
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x6366f1,
+                transparent: true,
+                opacity: 0.12,
+                wireframe: true
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            let mouseX = 0, mouseY = 0;
+            document.getElementById('home').addEventListener('mousemove', function(e) {
+                mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                mesh.rotation.x += 0.004;
+                mesh.rotation.y += 0.006;
+                mesh.rotation.x += mouseY * 0.0008;
+                mesh.rotation.y += mouseX * 0.0008;
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener('resize', function() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        })();
+
+        // ——— 3D tilt on cards ———
+        document.querySelectorAll('.card-3d').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                const tiltX = (y - 0.5) * 12;
+                const tiltY = (x - 0.5) * -12;
+                card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+
+        // ——— Magnetic-style buttons ———
+        document.querySelectorAll('.btn-magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', function(e) {
+                const rect = btn.getBoundingClientRect();
+                const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
+                const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
+                btn.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+            });
+            btn.addEventListener('mouseleave', function() {
+                btn.style.transform = 'translate(0, 0) scale(1)';
+            });
+        });
+
+        // ——— Typewriter ———
+        const texts = ["Software Developer @ ASU", "Experienced in React, TypeScript, Next.js, Python, AWS, Supabase..."];
+        const typewriterElement = document.getElementById("typewriter-subtitle");
+        let textIndex = 0, charIndex = 0, isDeleting = false;
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) { isDeleting = false; textIndex = (textIndex + 1) % texts.length; setTimeout(typeWriter, 500); }
+                else setTimeout(typeWriter, 50);
+            } else {
+                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentText.length) setTimeout(() => { isDeleting = true; typeWriter(); }, 2000);
+                else setTimeout(typeWriter, 100);
+            }
+        }
+        setTimeout(typeWriter, 500);
+
+        // ——— Mobile menu ———
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
         const menuIcon = document.getElementById("menu-icon");
         const closeIcon = document.getElementById("close-icon");
-
         mobileMenuBtn.addEventListener("click", function() {
             mobileMenu.classList.toggle("hidden");
             menuIcon.classList.toggle("hidden");
             closeIcon.classList.toggle("hidden");
         });
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function (e) {
+        // ——— Anchor clicks: Lenis if available, else native smooth scroll ———
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const el = document.querySelector(href);
+                if (!el) return;
+                if (lenis) lenis.scrollTo(el, { offset: -80 });
+                else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Auto-hide header on scroll down, show on scroll up
-        let lastScrollY = window.scrollY;
+        // ——— Navbar hide on scroll down + ScrollTrigger sync ———
+        let lastScrollY = 0;
         const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > lastScrollY && window.scrollY > 50) {
-                navbar.classList.add('-translate-y-full');
-            } else {
-                navbar.classList.remove('-translate-y-full');
-            }
-            lastScrollY = window.scrollY;
-        });
-
-        // Enhanced Experience Section Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const experienceObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry, index) {
-                if (entry.isIntersecting) {
-                    setTimeout(function() {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, index * 200);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all experience cards
-        document.querySelectorAll('.group').forEach(function(card, index) {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-            experienceObserver.observe(card);
-        });
-
-        // Animate achievement numbers on scroll
-        function animateNumbers(element, target) {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(function() {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current) + (target >= 100 ? '+' : '');
-            }, 20);
+        function onScroll() {
+            if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update();
+            const scroll = window.scrollY;
+            if (scroll > lastScrollY && scroll > 50) navbar.classList.add('-translate-y-full');
+            else navbar.classList.remove('-translate-y-full');
+            lastScrollY = scroll;
         }
-
-        const numberObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    const text = entry.target.textContent;
-                    const number = parseInt(text.replace(/[^\d]/g, ''));
-                    if (number) {
-                        animateNumbers(entry.target, number);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        // Observe achievement numbers
-        document.querySelectorAll('.text-2xl.font-bold').forEach(function(num) {
-            numberObserver.observe(num);
-        });
-
-        // Parallax effect for background pattern
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.absolute.inset-0.opacity-5');
-            if (parallax) {
-                parallax.style.transform = 'translateY(' + (scrolled * 0.1) + 'px)';
-            }
-        });
+        if (lenis) lenis.on('scroll', onScroll);
+        else window.addEventListener('scroll', onScroll, { passive: true });
     </script>
 </body>
 </html>
