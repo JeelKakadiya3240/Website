@@ -726,6 +726,45 @@
             });
         })();
 
+        // ——— Hero entrance: reveal glass card and content (fixes blank hero) ———
+        (function() {
+            var hero = document.getElementById('home');
+            var card = document.getElementById('hero-glass-card');
+            var profileWrap = document.getElementById('hero-profile-wrap');
+            if (!card || !hero) return;
+
+            if (typeof gsap !== 'undefined') {
+                gsap.to(card, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', overwrite: true });
+                gsap.to('#hero-hi', { opacity: 1, y: 0, duration: 0.55, delay: 0.15, ease: 'power2.out' });
+                gsap.to('#hero-name', { opacity: 1, y: 0, duration: 0.55, delay: 0.28, ease: 'power2.out' });
+                gsap.to('#hero-title-wrap', { opacity: 1, y: 0, duration: 0.55, delay: 0.42, ease: 'power2.out' });
+                gsap.to('#hero-desc', { opacity: 1, y: 0, duration: 0.55, delay: 0.55, ease: 'power2.out' });
+                gsap.to('#hero-btns', { opacity: 1, y: 0, duration: 0.55, delay: 0.7, ease: 'power2.out' });
+            } else {
+                card.style.opacity = '1';
+                card.style.transform = 'none';
+                [].forEach.call(hero.querySelectorAll('.hero-entrance'), function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+            }
+
+            var mx = 0, my = 0, tx = 0, ty = 0;
+            hero.addEventListener('mousemove', function(e) {
+                var rect = hero.getBoundingClientRect();
+                var x = (e.clientX - rect.left) / rect.width - 0.5;
+                var y = (e.clientY - rect.top) / rect.height - 0.5;
+                tx = x * 6;
+                ty = y * -6;
+            });
+            hero.addEventListener('mouseleave', function() { tx = ty = 0; });
+            function parallax() {
+                mx += (tx - mx) * 0.06;
+                my += (ty - my) * 0.06;
+                if (card) card.style.transform = 'rotateY(' + mx + 'deg) rotateX(' + my + 'deg) translateZ(0)';
+                if (profileWrap) profileWrap.style.transform = 'rotateY(' + (mx * 0.5) + 'deg) rotateX(' + (my * 0.5) + 'deg)';
+                requestAnimationFrame(parallax);
+            }
+            requestAnimationFrame(parallax);
+        })();
+
         // ——— 3D tilt on cards ———
         document.querySelectorAll('.card-3d').forEach(card => {
             card.addEventListener('mousemove', function(e) {
