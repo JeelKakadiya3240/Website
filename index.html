@@ -89,6 +89,12 @@
         body { background-color: #060e20; color: #dee5ff; font-family: 'Inter', sans-serif; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         section[id] { scroll-margin-top: 6rem; }
+        /* Hero circle: photo was nearly invisible at 20% opacity; full strength + mild lift */
+        .hero-sphere-photo {
+            background-size: cover;
+            background-position: center 15%;
+            filter: brightness(1.12) contrast(1.1) saturate(1.05);
+        }
     </style>
 </head>
 <body class="selection:bg-primary selection:text-on-primary">
@@ -138,11 +144,10 @@
 <!-- Glowing Sphere Visualization -->
 <div class="relative w-[450px] h-[450px]">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-surface rounded-full border border-primary/20 animate-pulse"></div>
-<div class="absolute inset-4 bg-surface rounded-full flex items-center justify-center overflow-hidden border border-outline-variant/10">
-<div class="absolute inset-0 opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPfQNnQkXT1ld-CLKOb78jIicqc1C4TJv8T1NhS5txQ2iRyFcESVilv9Ku_ErOB6WtOaTBNStk3P3GT2MI1FWUFBj1Xni4Xg0aN0h7kzxWNQ1dQU2VC1m6BlKvxu7JsRcaXA6_pQKBTw_FDQsrth2E8QAXt7C3D2Sjz3uCYSxHPVAJsat7AIAftK1ndPcEmvTHCzsXGgYCBk_1DkG05n-JqrrvkYe_jrhlAFEwhGvmrZ2hwg1Qs1hBRvHEOdNjldxXlV0Hj89mz0Q')"></div>
-<div class="relative flex flex-col items-center">
-<span class="material-symbols-outlined text-8xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
-<div class="text-xs font-mono text-on-surface-variant animate-pulse">SYSTEM_ONLINE: ASU_LAB_2024</div>
+<div class="absolute inset-4 bg-surface rounded-full overflow-hidden border border-outline-variant/10">
+<div class="absolute inset-0 hero-sphere-photo" style="background-image: url('1758210400253.jpeg')"></div>
+<div class="absolute bottom-6 left-0 right-0 z-10 text-center px-2">
+<div class="text-xs font-mono text-on-surface animate-pulse drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">SYSTEM_ONLINE: ASU_LAB_2024</div>
 </div>
 </div>
 <!-- Orbital elements -->
@@ -213,60 +218,60 @@
                     </div>
 </div>
 <div class="space-y-12">
-<!-- Exp 1 -->
+<!-- Exp 1: ASU -->
 <div class="relative pl-12 md:pl-0">
 <div class="hidden md:block absolute left-[50%] top-0 bottom-0 w-px bg-outline-variant/30"></div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
 <div class="md:text-right flex flex-col justify-center">
-<div class="text-primary font-bold text-sm tracking-widest uppercase mb-2">June 2024 - Present</div>
-<h3 class="text-2xl font-bold">Cypress Bridge Group</h3>
-<div class="text-on-surface-variant font-medium">Software/Web Development Intern</div>
+<div class="text-primary font-bold text-sm tracking-widest uppercase mb-2">May 2025 - Present</div>
+<h3 class="text-2xl font-bold">Arizona State University</h3>
+<div class="text-on-surface-variant font-medium">Software Developer Intern</div>
 </div>
 <div class="relative group">
 <div class="absolute -left-16 md:-left-12 top-6 w-8 h-8 rounded-full bg-surface border-4 border-primary z-10"></div>
 <div class="p-8 bg-surface-container-low rounded-3xl border border-outline-variant/10 group-hover:bg-surface-container-high transition-all">
 <div class="flex flex-wrap gap-2 mb-4">
-<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">NEXT.JS</span>
-<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">NODE.JS</span>
-<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">SUPABASE</span>
-<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">ETL</span>
-</div>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-                                        Spearheading the development of scalable web applications and optimizing complex ETL pipelines for data-driven business intelligence.
-                                    </p>
-</div>
-</div>
-</div>
-</div>
-<!-- Exp 2 -->
-<div class="relative pl-12 md:pl-0">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
-<div class="order-2 md:order-1 relative group">
-<div class="absolute -left-16 md:left-full md:-mr-4 md:ml-8 top-6 w-8 h-8 rounded-full bg-surface border-4 border-tertiary z-10"></div>
-<div class="p-8 bg-surface-container-low rounded-3xl border border-outline-variant/10 group-hover:bg-surface-container-high transition-all">
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">KAFKA</span>
-<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">FASTAPI</span>
-<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">AWS</span>
-<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">DOCKER</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">KAFKA</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">FASTAPI</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">AWS</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">DOCKER</span>
 </div>
 <p class="text-on-surface-variant text-sm leading-relaxed">
                                         Developed microservices architectures for campus-wide initiatives, leveraging real-time data streaming and cloud infrastructure.
                                     </p>
 </div>
 </div>
+</div>
+</div>
+<!-- Exp 2: Cypress Bridge -->
+<div class="relative pl-12 md:pl-0">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+<div class="order-2 md:order-1 relative group">
+<div class="absolute -left-16 md:left-full md:-mr-4 md:ml-8 top-6 w-8 h-8 rounded-full bg-surface border-4 border-tertiary z-10"></div>
+<div class="p-8 bg-surface-container-low rounded-3xl border border-outline-variant/10 group-hover:bg-surface-container-high transition-all">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">NEXT.JS</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">NODE.JS</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">SUPABASE</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">ETL</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                        Spearheading the development of scalable web applications and optimizing complex ETL pipelines for data-driven business intelligence.
+                                    </p>
+</div>
+</div>
 <div class="order-1 md:order-2 flex flex-col justify-center">
-<div class="text-tertiary font-bold text-sm tracking-widest uppercase mb-2">Aug 2023 - May 2024</div>
-<h3 class="text-2xl font-bold">Arizona State University</h3>
-<div class="text-on-surface-variant font-medium">Software Developer Intern</div>
+<div class="text-tertiary font-bold text-sm tracking-widest uppercase mb-2">Jan 2025 - Present</div>
+<h3 class="text-2xl font-bold">Cypress Bridge Group</h3>
+<div class="text-on-surface-variant font-medium">Software/Web Development Intern</div>
 </div>
 </div>
 </div>
-<!-- Exp 3 -->
+<!-- Exp 3: VBI -->
 <div class="relative pl-12 md:pl-0">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
 <div class="md:text-right flex flex-col justify-center">
-<div class="text-outline font-bold text-sm tracking-widest uppercase mb-2">Jan 2022 - June 2023</div>
+<div class="text-outline font-bold text-sm tracking-widest uppercase mb-2">Jan 2023 - Aug 2024</div>
 <h3 class="text-2xl font-bold">VBI Infotech</h3>
 <div class="text-on-surface-variant font-medium">Software Developer Intern</div>
 </div>
