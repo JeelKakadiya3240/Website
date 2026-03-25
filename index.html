@@ -95,6 +95,99 @@
             background-position: center 15%;
             filter: brightness(1.12) contrast(1.1) saturate(1.05);
         }
+        @keyframes hero-orbit-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        /* Keep chips upright: must combine translate + rotate in keyframes.
+           Using "reverse" on a rotate-only animation overwrote translate(-50%,-50%) → flipped / drifted text. */
+        @keyframes hero-orbit-counter {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(-360deg); }
+        }
+        .hero-orbit-ring {
+            animation: hero-orbit-spin 55s linear infinite;
+        }
+        /* Orbit radius > photo radius (~209px) so chips sit outside the circle, not on the face */
+        .hero-orbit-slot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0;
+            height: 0;
+            transform: rotate(var(--angle)) translateY(-262px);
+        }
+        .hero-orbit-label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: center center;
+            animation: hero-orbit-counter 55s linear infinite;
+        }
+        /* Orbital tags: gradient rim + glass pill + status dot */
+        .hero-skill-chip {
+            padding: 1px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, rgba(105,218,255,0.95), rgba(0,207,252,0.35), rgba(155,221,255,0.6));
+            box-shadow:
+                0 0 0 1px rgba(105,218,255,0.12) inset,
+                0 4px 20px rgba(0,0,0,0.4),
+                0 0 32px rgba(105,218,255,0.2);
+        }
+        .hero-skill-chip--violet {
+            background: linear-gradient(135deg, rgba(155,221,255,0.9), rgba(123,209,250,0.4), rgba(99,102,241,0.35));
+            box-shadow:
+                0 0 0 1px rgba(155,221,255,0.14) inset,
+                0 4px 20px rgba(0,0,0,0.4),
+                0 0 28px rgba(123,209,250,0.18);
+        }
+        .hero-skill-chip-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-radius: 9999px;
+            padding: 0.4rem 0.85rem 0.4rem 0.6rem;
+            background: linear-gradient(180deg, rgba(20,31,56,0.96) 0%, rgba(6,14,32,0.99) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .hero-skill-chip-dot {
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #69daff;
+            box-shadow: 0 0 12px rgba(105,218,255,0.9), 0 0 3px rgba(255,255,255,0.6);
+        }
+        .hero-skill-chip--violet .hero-skill-chip-dot {
+            background: #9bddff;
+            box-shadow: 0 0 12px rgba(155,221,255,0.85), 0 0 3px rgba(255,255,255,0.5);
+        }
+        .hero-skill-chip-text {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #e8eeff;
+            text-shadow: 0 0 20px rgba(105,218,255,0.25);
+            white-space: nowrap;
+        }
+        @media (min-width: 640px) {
+            .hero-skill-chip-text {
+                font-size: 10px;
+                letter-spacing: 0.2em;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-orbit-ring,
+            .hero-orbit-label {
+                animation: none !important;
+            }
+            .hero-orbit-label {
+                transform: translate(-50%, -50%);
+            }
+        }
     </style>
 </head>
 <body class="selection:bg-primary selection:text-on-primary">
@@ -141,21 +234,24 @@
 </div>
 </div>
 <div class="hidden lg:flex justify-center items-center relative">
-<!-- Glowing Sphere Visualization -->
-<div class="relative w-[450px] h-[450px]">
+<!-- Glowing Sphere Visualization: wider wrapper so orbit tags clear the portrait -->
+<div class="relative flex h-[min(640px,94vw)] w-[min(640px,96vw)] max-w-[640px] shrink-0 items-center justify-center">
+<div class="absolute left-1/2 top-1/2 z-0 h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-surface rounded-full border border-primary/20 animate-pulse"></div>
-<div class="absolute inset-4 bg-surface rounded-full overflow-hidden border border-outline-variant/10">
+<div class="absolute inset-4 z-10 bg-surface rounded-full overflow-hidden border border-outline-variant/10">
 <div class="absolute inset-0 hero-sphere-photo" style="background-image: url('1758210400253.jpeg')"></div>
-<div class="absolute bottom-6 left-0 right-0 z-10 text-center px-2">
-<div class="text-xs font-mono text-on-surface animate-pulse drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">SYSTEM_ONLINE: ASU_LAB_2024</div>
 </div>
 </div>
-<!-- Orbital elements -->
-<div class="absolute top-0 right-0 p-4 bg-surface-container-high/80 glass-blur rounded-2xl border border-outline-variant/20 shadow-2xl">
-<div class="text-xs text-primary font-bold">AWS CLOUD</div>
+<!-- Orbital skill tags: rotate outside the photo ring; labels counter-spin to stay readable -->
+<div class="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+<div class="hero-orbit-ring relative h-[520px] w-[520px] max-h-full max-w-full">
+<div class="hero-orbit-slot" style="--angle: 0deg"><div class="hero-orbit-label"><div class="hero-skill-chip"><div class="hero-skill-chip-inner"><span class="hero-skill-chip-dot" aria-hidden="true"></span><span class="hero-skill-chip-text">AWS Cloud</span></div></div></div></div>
+<div class="hero-orbit-slot" style="--angle: 60deg"><div class="hero-orbit-label"><div class="hero-skill-chip hero-skill-chip--violet"><div class="hero-skill-chip-inner"><span class="hero-skill-chip-dot" aria-hidden="true"></span><span class="hero-skill-chip-text">Next.js</span></div></div></div></div>
+<div class="hero-orbit-slot" style="--angle: 120deg"><div class="hero-orbit-label"><div class="hero-skill-chip hero-skill-chip--violet"><div class="hero-skill-chip-inner"><span class="hero-skill-chip-dot" aria-hidden="true"></span><span class="hero-skill-chip-text">FastAPI</span></div></div></div></div>
+<div class="hero-orbit-slot" style="--angle: 180deg"><div class="hero-orbit-label"><div class="hero-skill-chip"><div class="hero-skill-chip-inner"><span class="hero-skill-chip-dot" aria-hidden="true"></span><span class="hero-skill-chip-text">React</span></div></div></div></div>
+<div class="hero-orbit-slot" style="--angle: 240deg"><div class="hero-orbit-label"><div class="hero-skill-chip"><div class="hero-skill-chip-inner"><span class="hero-skill-chip-dot" aria-hidden="true"></span><span class="hero-skill-chip-text">TypeScript</span></div></div></div></div>
+<div class="hero-orbit-slot" style="--angle: 300deg"><div class="hero-orbit-label"><div class="hero-skill-chip hero-skill-chip--violet"><div class="hero-skill-chip-inner"><span class="hero-skill-chip-dot" aria-hidden="true"></span><span class="hero-skill-chip-text">Supabase</span></div></div></div></div>
 </div>
-<div class="absolute bottom-10 left-0 p-4 bg-surface-container-high/80 glass-blur rounded-2xl border border-outline-variant/20 shadow-2xl">
-<div class="text-xs text-tertiary font-bold">FAST API</div>
 </div>
 </div>
 </div>
@@ -478,7 +574,6 @@
 <div class="flex gap-8 font-['Inter'] text-xs tracking-wide uppercase">
 <a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="https://www.linkedin.com/in/jeelkakadiya/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 <a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="https://github.com/JeelKakadiya3240" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="#" aria-label="Twitter (add your profile URL)">Twitter</a>
 <a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="mailto:jkakadi1@asu.edu">Email</a>
 </div>
 </div>
