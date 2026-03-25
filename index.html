@@ -1,854 +1,512 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeel Kakadiya - Portfolio</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BG9Y5WFEK"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-5BG9Y5WFEK');
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JEEL.K | Portfolio</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5BG9Y5WFEK"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5BG9Y5WFEK');
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary": "#9bddff",
+                "surface": "#060e20",
+                "surface-container": "#0f1930",
+                "primary-fixed": "#00cffc",
+                "secondary-container": "#3c475a",
+                "on-error": "#490006",
+                "secondary-fixed": "#d8e3fb",
+                "surface-tint": "#69daff",
+                "surface-dim": "#060e20",
+                "error": "#ff716c",
+                "on-primary-fixed": "#002a35",
+                "on-secondary": "#475266",
+                "on-background": "#dee5ff",
+                "tertiary-container": "#7bd1fa",
+                "on-tertiary": "#004f69",
+                "surface-container-low": "#091328",
+                "outline": "#6d758c",
+                "primary": "#69daff",
+                "surface-container-high": "#141f38",
+                "on-primary-container": "#004050",
+                "on-secondary-container": "#c5d1e8",
+                "error-container": "#9f0519",
+                "secondary-fixed-dim": "#cad5ed",
+                "on-error-container": "#ffa8a3",
+                "surface-variant": "#192540",
+                "secondary": "#d8e3fb",
+                "surface-container-lowest": "#000000",
+                "inverse-primary": "#006880",
+                "outline-variant": "#40485d",
+                "on-tertiary-fixed": "#003041",
+                "on-secondary-fixed-variant": "#515c70",
+                "tertiary-fixed": "#7bd1fa",
+                "tertiary-dim": "#6cc3eb",
+                "surface-container-highest": "#192540",
+                "primary-container": "#00cffc",
+                "error-dim": "#d7383b",
+                "on-surface-variant": "#a3aac4",
+                "inverse-surface": "#faf8ff",
+                "surface-bright": "#1f2b49",
+                "on-tertiary-fixed-variant": "#004f69",
+                "on-primary": "#004a5d",
+                "on-tertiary-container": "#00465d",
+                "primary-dim": "#00c0ea",
+                "background": "#060e20",
+                "on-secondary-fixed": "#354053",
+                "primary-fixed-dim": "#00c0ea",
+                "on-primary-fixed-variant": "#004a5c",
+                "secondary-dim": "#cad5ed",
+                "tertiary-fixed-dim": "#6cc3eb",
+                "inverse-on-surface": "#4d556b",
+                "on-surface": "#dee5ff"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
     </script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --font-display: 'Outfit', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-        }
-        body { font-family: var(--font-body); }
-        h1, h2, h3, .font-display { font-family: var(--font-display); }
-        .typewriter-cursor {
-            animation: blink 0.8s infinite;
-        }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        .hero-background {
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.08) 100%);
-        }
-        
-        /* Enhanced Experience Section Styles */
-        .experience-card {
-            backdrop-filter: blur(20px);
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .experience-card:hover {
-            background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-            border-color: rgba(99, 102, 241, 0.2);
-            box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.15);
-        }
-        
-        .timeline-dot {
-            position: relative;
-            z-index: 10;
-        }
-        
-        .timeline-dot::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
-            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-        }
-        
-        .achievement-number {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-        
-        .tech-tag {
-            border: 1px solid transparent;
-        }
-        
-        /* Gradient text animation */
-        .gradient-text {
-            color: #111827;
-            animation: none;
-        }
-        
-        .dark .gradient-text {
-            color: #ffffff;
-        }
-        
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        /* Floating animation for cards */
-        .floating {
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        /* Enhanced scroll animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Force bullet point colors to be consistent */
-        .experience-bullet {
-            background-color: #4b5563 !important;
-        }
-        
-        .dark .experience-bullet {
-            background-color: #9ca3af !important;
-        }
-
-        /* 3D / Interactive UI */
-        .hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-        .nav-glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(255,255,255,0.7); }
-        .dark .nav-glass { background: rgba(17,24,39,0.8); }
-        .card-3d { transform-style: preserve-3d; perspective: 1000px; transition: transform 0.15s ease-out; will-change: transform; }
-        .card-3d-inner { transform: translateZ(20px); }
-        .btn-magnetic { transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .smooth-scroll-content { overflow-x: hidden; }
-        .gradient-mesh { background: radial-gradient(at 40% 20%, rgba(99,102,241,0.25) 0%, transparent 50%), radial-gradient(at 80% 0%, rgba(139,92,246,0.2) 0%, transparent 50%), radial-gradient(at 0% 50%, rgba(236,72,153,0.15) 0%, transparent 50%); }
-
-        /* Hero 3D / UI-UX showcase */
-        .hero-glass-card {
-            background: rgba(255,255,255,0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.5);
-            border-radius: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(99,102,241,0.15), 0 0 0 1px rgba(255,255,255,0.5) inset;
-            transform-style: preserve-3d;
-            perspective: 1200px;
-        }
-        .dark .hero-glass-card {
-            background: rgba(17,24,39,0.5);
-            border-color: rgba(255,255,255,0.08);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05) inset;
-        }
-        .hero-profile-wrap {
-            transform-style: preserve-3d;
-            perspective: 800px;
-            display: inline-block;
-        }
-        .hero-profile-wrap img {
-            border-radius: 50%;
-            box-shadow: 0 25px 50px -12px rgba(99,102,241,0.35), 0 0 0 4px rgba(255,255,255,0.8);
-            transition: transform 0.2s ease-out;
-        }
-        .dark .hero-profile-wrap img { box-shadow: 0 25px 50px -12px rgba(99,102,241,0.25), 0 0 0 4px rgba(255,255,255,0.1); }
-        .hero-parallax { transition: transform 0.12s ease-out; will-change: transform; }
-        .hero-entrance { opacity: 0; transform: translateY(24px); }
+<style>
+        .glass-blur { backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { background-color: #060e20; color: #dee5ff; font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="smooth-scroll smooth-scroll-content">
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full nav-glass border-b border-gray-200/50 dark:border-gray-700/50 z-50 transition-transform duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <a href="#home" class="text-2xl font-bold text-gray-800 dark:text-white">
-                        Portfolio
-                    </a>
-                </div>
-
-                <!-- Desktop menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#experience" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-                        <a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-slate-900/40 dark:bg-[#060e20]/60 backdrop-blur-xl rounded-full mt-4 mx-auto w-[90%] max-w-5xl border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="text-xl font-bold tracking-tighter text-[#00E5FF] font-['Space_Grotesk']">JEEL.K</div>
+<div class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] tracking-tight text-sm uppercase">
+<a class="nav-section-link text-[#00E5FF] font-bold border-b-2 border-[#00E5FF] pb-1" href="#home" data-section="home">Home</a>
+<a class="nav-section-link text-slate-400 dark:text-[#a3aac4] hover:text-[#dee5ff] transition-colors border-b-2 border-transparent pb-1" href="#about" data-section="about">About</a>
+<a class="nav-section-link text-slate-400 dark:text-[#a3aac4] hover:text-[#dee5ff] transition-colors border-b-2 border-transparent pb-1" href="#experience" data-section="experience">Experience</a>
+<a class="nav-section-link text-slate-400 dark:text-[#a3aac4] hover:text-[#dee5ff] transition-colors border-b-2 border-transparent pb-1" href="#skills" data-section="skills">Skills</a>
+<a class="nav-section-link text-slate-400 dark:text-[#a3aac4] hover:text-[#dee5ff] transition-colors border-b-2 border-transparent pb-1" href="#projects" data-section="projects">Projects</a>
+<a class="nav-section-link text-slate-400 dark:text-[#a3aac4] hover:text-[#dee5ff] transition-colors border-b-2 border-transparent pb-1" href="#contact" data-section="contact">Contact</a>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-cyan-400 hover:bg-white/5 p-2 rounded-full cursor-pointer transition-all">terminal</span>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-6" id="home">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute top-1/3 left-2/3 w-[300px] h-[300px] bg-tertiary/10 rounded-full blur-[80px]"></div>
+</div>
+<div class="container max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20 text-xs font-medium text-primary tracking-widest uppercase">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                        Available for opportunities
                     </div>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <svg id="menu-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#about" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#experience" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experience</a>
-                <a href="#skills" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                <a href="#projects" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#contact" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 overflow-hidden gradient-mesh">
-        <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-        <div class="pointer-events-none absolute inset-0 z-0 hero-background"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <div id="hero-glass-card" class="hero-glass-card hero-entrance px-8 py-10 sm:px-12 sm:py-14 md:px-16 md:py-16 max-w-2xl">
-                <div class="flex flex-col items-center text-center">
-                    <div id="hero-profile-wrap" class="hero-profile-wrap mb-6">
-                        <img id="hero-profile-img" src="public/profile.png" alt="Jeel Kakadiya profile photo" class="border-4 border-indigo-200 dark:border-indigo-700 object-cover w-32 h-32 sm:w-36 sm:h-36">
-                    </div>
-                    <h1 class="font-display text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-                        <span id="hero-hi" class="hero-entrance block">Hi, I'm</span>
-                        <span id="hero-name" class="hero-entrance block text-indigo-600 dark:text-indigo-400">
-                            Jeel Kakadiya
-                        </span>
-                        <span id="hero-title-wrap" class="hero-entrance block text-indigo-600 dark:text-indigo-400 min-h-[1.5em] flex items-center justify-center mt-2 text-2xl sm:text-3xl md:text-4xl">
-                            <span id="typewriter-subtitle" class="inline-block"></span>
-                            <span class="typewriter-cursor text-indigo-600 dark:text-indigo-400">|</span>
-                        </span>
-                    </h1>
-                    <p id="hero-desc" class="hero-entrance mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                        A passionate Software Developer specializing in building exceptional digital experiences.
-                        Currently pursuing Master's in Computer Science at Arizona State University.
+<h1 class="text-6xl md:text-8xl font-headline font-bold leading-tight tracking-tighter text-on-surface">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">Jeel Kakadiya</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-xl font-light leading-relaxed">
+                        Software Developer @ <span class="text-on-surface font-semibold">ASU</span>. Architecting high-performance digital systems with academic precision.
                     </p>
-                    <div id="hero-btns" class="hero-entrance mt-8 max-w-md mx-auto flex flex-col sm:flex-row sm:justify-center gap-4">
-                        <a href="#contact" class="btn-magnetic inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-white dark:border-gray-700/50 text-indigo-700 dark:text-indigo-200 hover:bg-white dark:hover:bg-gray-800 hover:shadow-xl transition-all duration-200 gap-2 group">
-                            Get in touch
-                        </a>
-                        <a href="#projects" class="btn-magnetic inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-indigo-600 text-white hover:bg-indigo-500 hover:shadow-xl transition-all duration-200 gap-2 group">
-                            View Projects
-                        </a>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container rounded-xl text-on-primary font-bold hover:shadow-[0_0_20px_rgba(105,218,255,0.4)] transition-all transform hover:-translate-y-1" href="#contact">Get in touch</a>
+<a class="px-8 py-4 bg-transparent border border-outline-variant/30 rounded-xl text-on-surface font-medium hover:bg-surface-variant transition-all transform hover:-translate-y-1" href="#projects">View Projects</a>
+</div>
+</div>
+<div class="hidden lg:flex justify-center items-center relative">
+<!-- Glowing Sphere Visualization -->
+<div class="relative w-[450px] h-[450px]">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-surface rounded-full border border-primary/20 animate-pulse"></div>
+<div class="absolute inset-4 bg-surface rounded-full flex items-center justify-center overflow-hidden border border-outline-variant/10">
+<div class="absolute inset-0 opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPfQNnQkXT1ld-CLKOb78jIicqc1C4TJv8T1NhS5txQ2iRyFcESVilv9Ku_ErOB6WtOaTBNStk3P3GT2MI1FWUFBj1Xni4Xg0aN0h7kzxWNQ1dQU2VC1m6BlKvxu7JsRcaXA6_pQKBTw_FDQsrth2E8QAXt7C3D2Sjz3uCYSxHPVAJsat7AIAftK1ndPcEmvTHCzsXGgYCBk_1DkG05n-JqrrvkYe_jrhlAFEwhGvmrZ2hwg1Qs1hBRvHEOdNjldxXlV0Hj89mz0Q')"></div>
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-8xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
+<div class="text-xs font-mono text-on-surface-variant animate-pulse">SYSTEM_ONLINE: ASU_LAB_2024</div>
+</div>
+</div>
+<!-- Orbital elements -->
+<div class="absolute top-0 right-0 p-4 bg-surface-container-high/80 glass-blur rounded-2xl border border-outline-variant/20 shadow-2xl">
+<div class="text-xs text-primary font-bold">AWS CLOUD</div>
+</div>
+<div class="absolute bottom-10 left-0 p-4 bg-surface-container-high/80 glass-blur rounded-2xl border border-outline-variant/20 shadow-2xl">
+<div class="text-xs text-tertiary font-bold">FAST API</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 px-6 bg-surface-container-low/30" id="about">
+<div class="container max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-5">
+<h2 class="text-4xl md:text-5xl font-headline font-bold mb-8">About <span class="text-primary">Me</span></h2>
+<div class="w-20 h-1.5 bg-primary rounded-full mb-12"></div>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+                            Currently pursuing my <span class="text-on-surface font-medium">Master's in Computer Science</span> at Arizona State University. My journey is defined by a relentless pursuit of engineering excellence and technical innovation.
+                        </p>
+<p class="text-lg text-on-surface-variant leading-relaxed italic">
+                            "Building exceptional digital experiences through data-driven decisions and scalable architectures."
+                        </p>
+</div>
+<div class="lg:col-span-7">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 bg-surface-variant/40 glass-blur rounded-3xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">school</span>
+<h3 class="text-xl font-bold mb-2">Academic Core</h3>
+<p class="text-sm text-on-surface-variant">Deep diving into Distributed Systems, Cloud Computing, and AI at ASU.</p>
+</div>
+<div class="p-8 bg-surface-variant/40 glass-blur rounded-3xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">code_blocks</span>
+<h3 class="text-xl font-bold mb-2">Modern Stack</h3>
+<p class="text-sm text-on-surface-variant">Crafting seamless solutions using React, Next.js, and specialized Backend frameworks.</p>
+</div>
+</div>
+<div class="mt-6 p-8 bg-surface-container-highest/30 rounded-3xl border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-3 h-3 rounded-full bg-error-dim"></div>
+<div class="w-3 h-3 rounded-full bg-primary-dim"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary-dim"></div>
+<span class="ml-auto font-mono text-xs text-on-surface-variant">bash -- ASU-Terminal</span>
+</div>
+<code class="block font-mono text-sm text-tertiary">
+<span class="text-on-surface-variant">$</span> fetch profile_stats<br/>
+<span class="text-on-surface-variant">Location:</span> Tempe, Arizona<br/>
+<span class="text-on-surface-variant">Education:</span> MS Computer Science @ ASU<br/>
+<span class="text-on-surface-variant">Focus:</span> Cloud Architecture &amp; Fullstack Dev
+                            </code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-32 px-6" id="experience">
+<div class="container max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div>
+<h2 class="text-4xl md:text-6xl font-headline font-bold tracking-tight">Professional <br/><span class="text-primary">Timeline</span></h2>
+</div>
+<div class="text-on-surface-variant text-right max-w-xs">
+                        Refining industry-standard software engineering practices across diverse environments.
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-reveal py-20 bg-white dark:bg-gray-900 pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">About</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-                    A bit about me
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-                    I am a Master's student in Computer Science at Arizona State University, with a strong foundation in software development and a passion for creating innovative solutions.
-                </p>
-            </div>
-
-            <div class="mt-10">
-                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Education</h3>
-                            <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
-                                Master of Science in Computer Science<br>
-                                Arizona State University<br>
-                                Expected Graduation: 2025
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Experience</h3>
-                            <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
-                                Software Development Intern<br>
-                                Previous roles in web development and software engineering<br>
-                                Strong focus on full-stack development and cloud technologies
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section-reveal py-20 bg-white dark:bg-gray-900">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase mb-2">WORK EXPERIENCE</h2>
-          <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-            Professional Experience
-          </p>
-        </div>
-
-        <!-- Experience Items -->
-        <div class="space-y-8">
-          <!-- Cypress Bridge Group -->
-          <div class="stagger-item card-3d bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-              <div class="mb-3 sm:mb-0">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  Software/Web Development Intern
-                </h3>
-                <p class="text-indigo-600 dark:text-indigo-400 font-semibold">Cypress Bridge Group, LLC</p>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Remote, AZ, USA</p>
-              </div>
-              <div class="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                Jan 2026 – Present
-              </div>
-            </div>
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Implemented user-facing features and backend endpoints using React/Next.js and Node.js, Django, and Flask across web applications.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Orchestrated ETL workflows to replace manual CSV imports by ingesting official government datasets into Supabase, improving data refresh speed by 70%.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Implemented role-based access control for reports using Supabase authentication with JWT-based session management.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Arizona State University -->
-          <div class="stagger-item card-3d bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-              <div class="mb-3 sm:mb-0">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  Software Developer Intern
-                </h3>
-                <a href="https://www.asu.edu/" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">Arizona State University</a>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Tempe, AZ, USA</p>
-              </div>
-              <div class="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                May 2025 – Present
-              </div>
-            </div>
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Implemented event-driven data processing workflows using Kafka to improve system throughput and fault tolerance for analytics pipelines.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Designed and deployed APIs using Python (FastAPI) and Node.js on AWS to automate reporting pipelines processing 100K+ records per day.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Developed a serverless transportation system with TypeScript, React, and AWS Lambda supporting scheduling and real-time tracking for 500+ campus users.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Standardized deployment using Docker, Jenkins, and GitHub Actions, reducing release overhead and improving deployment reliability.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- VBI Infotech -->
-          <div class="stagger-item card-3d bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-              <div class="mb-3 sm:mb-0">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  Software Developer Intern
-                </h3>
-                <p class="text-indigo-600 dark:text-indigo-400 font-semibold">VBI Infotech</p>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Surat, India</p>
-              </div>
-              <div class="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                Jan 2024 – Aug 2024
-              </div>
-            </div>
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Created the initial relational database schema for an internal reporting module, covering 8–10 core entities and reducing query latency by 30%.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Built backend functionality using Python and FastAPI to support application features such as data retrieval, filtering, and reporting.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Added data ingestion and processing logic to handle periodic updates, enabling reliable storage and access to structured data.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section-reveal py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">Skills</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-                    Technical Expertise
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-                    A comprehensive set of skills I've developed through my academic and professional journey
-                </p>
-            </div>
-
-            <div class="mt-10">
-                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
-                        <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
-                                Programming Languages
-                            </h3>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Java</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Python</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">JavaScript</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">TypeScript</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">C++</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">SQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
-                        <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
-                                Web Technologies
-                            </h3>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">React</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Next.js</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Node.js</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">HTML5</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">CSS3</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Tailwind CSS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
-                        <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
-                                Cloud &amp; DevOps
-                            </h3>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">AWS</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Docker</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Git</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">CI/CD</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">REST APIs</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Microservices</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
-                        <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
-                                Databases
-                            </h3>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">MongoDB</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">PostgreSQL</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">MySQL</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Redis</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-900 overflow-hidden shadow rounded-2xl border border-gray-100 dark:border-gray-800">
-                        <div class="px-4 py-5 sm:p-6">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white font-display">
-                                Tools &amp; Frameworks
-                            </h3>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Spring Boot</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Express.js</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">GraphQL</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">JUnit</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Maven</span>
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Gradle</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section-reveal py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase mb-2">Featured Projects</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-                    Featured Projects
-                </p>
-            </div>
-            <div class="grid gap-8 md:grid-cols-2">
-                <!-- Smart DART -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Smart DART</h3>
-                    <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">Arizona State University</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        Arizona State University's on-campus golf cart ride management platform for approved riders.
-                        Built a scalable system to manage riders, drivers, carts, and schedules with secure ASU authentication.
-                    </p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3"><strong>Tech:</strong> React (Vite), AWS (Lambda, API Gateway), Terraform</p>
-                    <a href="https://dartcms.apps.asu.edu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:underline text-sm">
-                        Project Overview →
+</div>
+<div class="space-y-12">
+<!-- Exp 1 -->
+<div class="relative pl-12 md:pl-0">
+<div class="hidden md:block absolute left-[50%] top-0 bottom-0 w-px bg-outline-variant/30"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+<div class="md:text-right flex flex-col justify-center">
+<div class="text-primary font-bold text-sm tracking-widest uppercase mb-2">June 2024 - Present</div>
+<h3 class="text-2xl font-bold">Cypress Bridge Group</h3>
+<div class="text-on-surface-variant font-medium">Software/Web Development Intern</div>
+</div>
+<div class="relative group">
+<div class="absolute -left-16 md:-left-12 top-6 w-8 h-8 rounded-full bg-surface border-4 border-primary z-10"></div>
+<div class="p-8 bg-surface-container-low rounded-3xl border border-outline-variant/10 group-hover:bg-surface-container-high transition-all">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">NEXT.JS</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">NODE.JS</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">SUPABASE</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] rounded border border-primary/20">ETL</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                        Spearheading the development of scalable web applications and optimizing complex ETL pipelines for data-driven business intelligence.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Exp 2 -->
+<div class="relative pl-12 md:pl-0">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+<div class="order-2 md:order-1 relative group">
+<div class="absolute -left-16 md:left-full md:-mr-4 md:ml-8 top-6 w-8 h-8 rounded-full bg-surface border-4 border-tertiary z-10"></div>
+<div class="p-8 bg-surface-container-low rounded-3xl border border-outline-variant/10 group-hover:bg-surface-container-high transition-all">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">KAFKA</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">FASTAPI</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">AWS</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded border border-tertiary/20">DOCKER</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                        Developed microservices architectures for campus-wide initiatives, leveraging real-time data streaming and cloud infrastructure.
+                                    </p>
+</div>
+</div>
+<div class="order-1 md:order-2 flex flex-col justify-center">
+<div class="text-tertiary font-bold text-sm tracking-widest uppercase mb-2">Aug 2023 - May 2024</div>
+<h3 class="text-2xl font-bold">Arizona State University</h3>
+<div class="text-on-surface-variant font-medium">Software Developer Intern</div>
+</div>
+</div>
+</div>
+<!-- Exp 3 -->
+<div class="relative pl-12 md:pl-0">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+<div class="md:text-right flex flex-col justify-center">
+<div class="text-outline font-bold text-sm tracking-widest uppercase mb-2">Jan 2022 - June 2023</div>
+<h3 class="text-2xl font-bold">VBI Infotech</h3>
+<div class="text-on-surface-variant font-medium">Software Developer Intern</div>
+</div>
+<div class="relative group">
+<div class="absolute -left-16 md:-left-12 top-6 w-8 h-8 rounded-full bg-surface border-4 border-outline z-10"></div>
+<div class="p-8 bg-surface-container-low rounded-3xl border border-outline-variant/10 group-hover:bg-surface-container-high transition-all">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-outline/10 text-outline text-[10px] rounded border border-outline/20">PYTHON</span>
+<span class="px-2 py-1 bg-outline/10 text-outline text-[10px] rounded border border-outline/20">FASTAPI</span>
+<span class="px-2 py-1 bg-outline/10 text-outline text-[10px] rounded border border-outline/20">DB SCHEMA</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                        Focused on backend development and database design, building robust API endpoints for commercial software products.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-32 px-6 bg-surface-container-low" id="skills">
+<div class="container max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-4xl font-headline font-bold mb-4">Technical <span class="text-primary">Arsenal</span></h2>
+<p class="text-on-surface-variant">A curated collection of tools and technologies I master.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Programming -->
+<div class="bg-surface p-6 rounded-2xl border border-outline-variant/10">
+<h4 class="text-xs font-bold text-primary tracking-widest uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">code</span> Programming
+                        </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Python</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Java</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">C++</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">JS/TS</span>
+</div>
+</div>
+<!-- Web -->
+<div class="bg-surface p-6 rounded-2xl border border-outline-variant/10">
+<h4 class="text-xs font-bold text-primary tracking-widest uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">language</span> Web
+                        </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">React</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Next.js</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Tailwind</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">FastAPI</span>
+</div>
+</div>
+<!-- Cloud -->
+<div class="bg-surface p-6 rounded-2xl border border-outline-variant/10">
+<h4 class="text-xs font-bold text-primary tracking-widest uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">cloud</span> Cloud/DevOps
+                        </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">AWS</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Docker</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Kubernetes</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">CI/CD</span>
+</div>
+</div>
+<!-- Databases -->
+<div class="bg-surface p-6 rounded-2xl border border-outline-variant/10">
+<h4 class="text-xs font-bold text-primary tracking-widest uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">database</span> Databases
+                        </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">PostgreSQL</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">MongoDB</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Redis</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Supabase</span>
+</div>
+</div>
+<!-- Tools -->
+<div class="bg-surface p-6 rounded-2xl border border-outline-variant/10">
+<h4 class="text-xs font-bold text-primary tracking-widest uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">construction</span> Tools
+                        </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Git</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Kafka</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Jira</span>
+<span class="px-3 py-1.5 bg-surface-variant text-xs rounded-md border border-outline-variant/30 font-mono">Postman</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-32 px-6" id="projects">
+<div class="container max-w-7xl mx-auto">
+<div class="flex items-center gap-6 mb-16">
+<h2 class="text-4xl md:text-5xl font-headline font-bold">Featured <span class="text-primary">Projects</span></h2>
+<div class="h-px grow bg-outline-variant/20 hidden md:block"></div>
+</div>
+<!-- Projects Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+<!-- Project 1: Large -->
+<a href="https://dartcms.apps.asu.edu" target="_blank" rel="noopener noreferrer" class="md:col-span-4 bg-surface-container-low rounded-[2rem] border border-outline-variant/10 overflow-hidden group block hover:border-primary/30 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+<div class="h-64 bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzqJIYlvfVBO6UVByY6XZZm5h3Ah9l-udq1s9d5lgUGPXsohx7dvBdQu9yG58fa1DznB1BBh9I5xM81CyhlUP-AlZR0_7fwX4sN35gBWkwSVOMO9kgUHeDvSCmxy76KeEnN_QHa1Oh01m3h-dFdpItopHuuGbQlKpBHjAqrUMMO1qBM-OldcPWfSyZYBk-QE6fxBtVOwJQUGI_1lduBMbxmwI60obdQauyyE4vKmeP2qkcw1v95_JOn2WgNAX0jizFwJSglT4fzp0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-3xl font-bold">Smart DART</h3>
+<span class="material-symbols-outlined text-primary" aria-hidden="true">open_in_new</span>
+</div>
+<p class="text-on-surface-variant mb-6">Autonomous ASU Golf Cart Management system featuring real-time tracking and logistics optimization.</p>
+<div class="flex gap-3">
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">React Native</span>
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">Node.js</span>
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">Google Maps API</span>
+</div>
+</div>
+</a>
+<!-- Project 2: Square -->
+<a href="https://github.com/JeelKakadiya3240/Professional_Resume_Builder" target="_blank" rel="noopener noreferrer" class="md:col-span-2 bg-surface-container-low rounded-[2rem] border border-outline-variant/10 p-8 flex flex-col group hover:border-primary/30 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+<div class="mb-auto">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h3 class="text-2xl font-bold mb-3">Resume.io</h3>
+<p class="text-on-surface-variant text-sm">AI-powered resume analysis tool providing real-time feedback and keyword optimization.</p>
+</div>
+<div class="mt-8">
+<span class="text-[10px] font-bold tracking-widest text-tertiary uppercase">OpenAI GPT-4 · GitHub →</span>
+</div>
+</a>
+<!-- Project 3: Square -->
+<a href="https://github.com/JeelKakadiya3240/Email-Automail" target="_blank" rel="noopener noreferrer" class="md:col-span-2 bg-surface-container-low rounded-[2rem] border border-outline-variant/10 p-8 flex flex-col group hover:border-primary/30 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+<div class="mb-auto">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">send</span>
+<h3 class="text-2xl font-bold mb-3">Email Automation</h3>
+<p class="text-on-surface-variant text-sm">Python script for high-throughput bulk email delivery with templating and delivery tracking.</p>
+</div>
+<div class="mt-8">
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">Python smtplib · GitHub →</span>
+</div>
+</a>
+<!-- Project 4: Horizontal Medium -->
+<a href="https://github.com/JeelKakadiya3240/Res_AI" target="_blank" rel="noopener noreferrer" class="md:col-span-4 bg-surface-container-low rounded-[2rem] border border-outline-variant/10 p-8 flex flex-col md:flex-row gap-8 group hover:border-primary/30 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+<div class="flex-1">
+<div class="mb-6">
+<h3 class="text-2xl font-bold mb-3">AI Voice Assistant</h3>
+<p class="text-on-surface-variant text-sm">Restaurant assistant capable of taking complex voice orders and managing reservation queues via natural language processing.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">FastAPI</span>
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">Whisper AI</span>
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">GitHub →</span>
+</div>
+</div>
+<div class="flex-1 h-32 md:h-full bg-surface-variant rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxz8syqjYp3rv-mBS6Tk0gGISNCqcCxAkUtwh7SA5d6eLngH4qTsNW6xWXEMvQg55Fizw4wx3WetpUU6NgLSW2qtt5KYYZGXaQys0btcmDEij0OGflqaGzE04MKCIz1tAwt_BT4n--hfzUUzV2ByO2RsO4NllDS_WwwctHjQu843rsRFGoM-Qt41dHMieDnaUeTBsAgzPlUgFazpOLOdsE2i853Zl3IL45g30b9yuNpQa5YaULxS3A1aSRoomMAH7oa0V5CKNTX88"/>
+</div>
+</a>
+<!-- Project 5: Full Width Narrow -->
+<a href="https://www.cypressbridge.dev/" target="_blank" rel="noopener noreferrer" class="md:col-span-6 bg-gradient-to-r from-surface-container-low to-surface-variant/20 rounded-[2rem] border border-outline-variant/10 p-8 flex flex-col md:flex-row items-center gap-12 group hover:border-primary/30 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+<div class="md:w-1/3">
+<span class="text-xs font-bold text-tertiary tracking-[0.2em] uppercase block mb-2">Government Data</span>
+<h3 class="text-3xl font-bold">Cypress Hospital Benchmarks</h3>
+</div>
+<div class="md:w-2/3">
+<p class="text-on-surface-variant mb-4">A comprehensive analytics platform visualizing USA CMS healthcare data to establish industry benchmarks for patient care quality.</p>
+<div class="flex flex-wrap gap-4">
+<span class="px-3 py-1 rounded bg-tertiary/10 text-tertiary text-xs font-mono">D3.js</span>
+<span class="px-3 py-1 rounded bg-tertiary/10 text-tertiary text-xs font-mono">USA CMS API</span>
+<span class="text-xs font-mono text-primary">cypressbridge.dev →</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-6" id="contact">
+<div class="container max-w-5xl mx-auto text-center">
+<div class="mb-12">
+<h2 class="text-5xl md:text-7xl font-headline font-bold mb-6">Let's <span class="text-primary">Connect</span></h2>
+<p class="text-xl text-on-surface-variant max-w-2xl mx-auto">Open for new opportunities and collaborative engineering projects. Feel free to reach out for my resume or just a technical chat.</p>
+</div>
+<div class="flex flex-col md:flex-row justify-center items-center gap-6">
+<a class="w-full md:w-auto flex items-center justify-center gap-3 px-10 py-5 bg-primary text-on-primary rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(105,218,255,0.3)] transition-all" href="mailto:jkakadi1@asu.edu">
+<span class="material-symbols-outlined">mail</span>
+                        Send Email
                     </a>
-                </div>
-
-                <!-- Resume.io -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Resume.io</h3>
-                    <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">AI-Powered Resume Analysis</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        AI-powered resume analysis platform leveraging NLP (BERT, TF-IDF) to evaluate and score resumes.
-                        Optimized backend with Redis caching for 40% faster responses and AWS serverless deployment.
-                    </p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3"><strong>Tech:</strong> Python (FastAPI), React, AWS (Lambda, ECS, RDS, S3), Docker, GitHub Actions</p>
-                    <a href="https://github.com/JeelKakadiya3240/Professional_Resume_Builder" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:underline text-sm">
-                        Repository →
+<a class="w-full md:w-auto flex items-center justify-center gap-3 px-10 py-5 bg-surface-container-high border border-outline-variant/30 text-on-surface rounded-2xl font-bold text-lg hover:bg-surface-variant transition-all" href="https://www.linkedin.com/in/jeelkakadiya/" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">person</span>
+                        LinkedIn
                     </a>
-                </div>
-
-                <!-- Email Automation Script -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email Automation Script</h3>
-                    <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">Bulk Email Tool</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        Python-based script to send personalized emails to multiple recipients from an Excel list.
-                        Supports 3,000+ email sends using Gmail SMTP with TLS for secure delivery.
-                    </p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3"><strong>Tech:</strong> Python, smtplib, email.mime, pandas</p>
-                    <a href="https://github.com/JeelKakadiya3240/Email-Automail" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:underline text-sm">
-                        Repository →
-                    </a>
-                </div>
-
-                <!-- AI Voice Order Assistant -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI Voice Order Assistant</h3>
-                    <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">Restaurant Order &amp; Support System</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        AI voice assistant that takes orders over the phone, handles customer requests, and performs database operations.
-                        Pending orders are visible in real time to the restaurant handling person for seamless fulfillment.
-                    </p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3"><strong>Tech:</strong> Voice AI, Database, Real-time Dashboard</p>
-                    <a href="https://github.com/JeelKakadiya3240/Res_AI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:underline text-sm">
-                        Repository →
-                    </a>
-                </div>
-
-                <!-- Cypress CMS Hospital Benchmarks -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cypress Hospital Benchmarks</h3>
-                    <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-3">USA CMS Data &amp; Analytics</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        Ingests USA CMS (Centers for Medicare &amp; Medicaid Services) data via a GitHub-hosted pipeline that runs monthly.
-                        Data is transformed and stored in a database, with a dashboard for users to view hospital benchmark performance metrics.
-                    </p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3"><strong>Tech:</strong> GitHub Actions, ETL, Database, Dashboard</p>
-                    <a href="https://www.cypressbridge.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:underline text-sm">
-                        Project Overview →
-                    </a>
-                </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-12 px-8 bg-transparent">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto border-t border-white/5 pt-12">
+<div class="font-['Inter'] text-xs tracking-wide uppercase text-[#a3aac4]">
+                © 2024 Jeel Kakadiya. Built with Academic Precision.
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-reveal py-20 bg-white dark:bg-gray-900">
-      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl font-display">CONTACT</h2>
-          <div class="mt-4 flex justify-center">
-            <div class="w-24 h-1 bg-indigo-600 dark:bg-indigo-400 rounded-full"></div>
-          </div>
-          <p class="mt-6 text-xl text-gray-500 dark:text-gray-300 max-w-xl mx-auto">
-            I'm always open to new opportunities and collaborations.
-          </p>
-        </div>
-        <div class="flex flex-col items-center gap-6 mt-10">
-          <a
-            href="https://www.linkedin.com/in/jeelkakadiya/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-magnetic inline-flex items-center gap-3 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-lg shadow hover:bg-indigo-700 transition-colors duration-200"
-          >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
-            Connect on LinkedIn
-          </a>
-          <a
-            href="mailto:jkakadi1@asu.edu"
-            class="btn-magnetic inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gray-100 dark:bg-gray-800 text-indigo-700 dark:text-indigo-200 font-semibold text-lg shadow hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors duration-200"
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-            Email Me
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-50 dark:bg-gray-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-base text-gray-500 dark:text-gray-300">
-                    &copy; 2025 Jeel Kakadiya. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script>
-        // ——— GSAP ScrollTrigger first (so content shows even if Lenis fails) ———
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            gsap.registerPlugin(ScrollTrigger);
-            gsap.utils.toArray('.section-reveal').forEach(section => {
-                gsap.from(section, {
-                    opacity: 0, y: 56, duration: 0.9, ease: 'power3.out',
-                    scrollTrigger: { trigger: section, start: 'top 85%', toggleActions: 'play none none none' }
-                });
-            });
-            gsap.utils.toArray('section').forEach(section => {
-                const items = section.querySelectorAll('.stagger-item');
-                items.forEach((el, i) => {
-                    gsap.from(el, {
-                        opacity: 0, y: 40, duration: 0.6, delay: i * 0.08, ease: 'power2.out',
-                        scrollTrigger: { trigger: section, start: 'top 80%' }
-                    });
-                });
-            });
-        }
-
-        // ——— Lenis smooth scroll (optional; page works without it) ———
-        var lenis = null;
-        try {
-            if (typeof Lenis !== 'undefined') {
-                lenis = new Lenis({ lerp: 0.08, duration: 1.2 });
-                function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-                requestAnimationFrame(raf);
-            }
-        } catch (e) { console.warn('Lenis not loaded, using native scroll'); }
-
-        // ——— Three.js hero background ———
-        (function() {
-            const canvas = document.getElementById('hero-canvas');
-            if (!canvas || typeof THREE === 'undefined') return;
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            camera.position.z = 5;
-
-            const geometry = new THREE.TorusKnotGeometry(0.8, 0.25, 128, 32);
-            const material = new THREE.MeshBasicMaterial({
-                color: 0x6366f1,
-                transparent: true,
-                opacity: 0.12,
-                wireframe: true
-            });
-            const mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
-
-            let mouseX = 0, mouseY = 0;
-            document.getElementById('home').addEventListener('mousemove', function(e) {
-                mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-                mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-            });
-
-            function animate() {
-                requestAnimationFrame(animate);
-                mesh.rotation.x += 0.004;
-                mesh.rotation.y += 0.006;
-                mesh.rotation.x += mouseY * 0.0008;
-                mesh.rotation.y += mouseX * 0.0008;
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            window.addEventListener('resize', function() {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        })();
-
-        // ——— Hero entrance: reveal glass card and content (fixes blank hero) ———
-        (function() {
-            var hero = document.getElementById('home');
-            var card = document.getElementById('hero-glass-card');
-            var profileWrap = document.getElementById('hero-profile-wrap');
-            if (!card || !hero) return;
-
-            if (typeof gsap !== 'undefined') {
-                gsap.to(card, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', overwrite: true });
-                gsap.to('#hero-hi', { opacity: 1, y: 0, duration: 0.55, delay: 0.15, ease: 'power2.out' });
-                gsap.to('#hero-name', { opacity: 1, y: 0, duration: 0.55, delay: 0.28, ease: 'power2.out' });
-                gsap.to('#hero-title-wrap', { opacity: 1, y: 0, duration: 0.55, delay: 0.42, ease: 'power2.out' });
-                gsap.to('#hero-desc', { opacity: 1, y: 0, duration: 0.55, delay: 0.55, ease: 'power2.out' });
-                gsap.to('#hero-btns', { opacity: 1, y: 0, duration: 0.55, delay: 0.7, ease: 'power2.out' });
-            } else {
-                card.style.opacity = '1';
-                card.style.transform = 'none';
-                [].forEach.call(hero.querySelectorAll('.hero-entrance'), function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
-            }
-
-            var mx = 0, my = 0, tx = 0, ty = 0;
-            hero.addEventListener('mousemove', function(e) {
-                var rect = hero.getBoundingClientRect();
-                var x = (e.clientX - rect.left) / rect.width - 0.5;
-                var y = (e.clientY - rect.top) / rect.height - 0.5;
-                tx = x * 6;
-                ty = y * -6;
-            });
-            hero.addEventListener('mouseleave', function() { tx = ty = 0; });
-            function parallax() {
-                mx += (tx - mx) * 0.06;
-                my += (ty - my) * 0.06;
-                if (card) card.style.transform = 'rotateY(' + mx + 'deg) rotateX(' + my + 'deg) translateZ(0)';
-                if (profileWrap) profileWrap.style.transform = 'rotateY(' + (mx * 0.5) + 'deg) rotateX(' + (my * 0.5) + 'deg)';
-                requestAnimationFrame(parallax);
-            }
-            requestAnimationFrame(parallax);
-        })();
-
-        // ——— 3D tilt on cards ———
-        document.querySelectorAll('.card-3d').forEach(card => {
-            card.addEventListener('mousemove', function(e) {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width;
-                const y = (e.clientY - rect.top) / rect.height;
-                const tiltX = (y - 0.5) * 12;
-                const tiltY = (x - 0.5) * -12;
-                card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
-            card.addEventListener('mouseleave', function() {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
+<div class="flex gap-8 font-['Inter'] text-xs tracking-wide uppercase">
+<a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="https://www.linkedin.com/in/jeelkakadiya/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="https://github.com/JeelKakadiya3240" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="#" aria-label="Twitter (add your profile URL)">Twitter</a>
+<a class="text-[#a3aac4] hover:text-[#00E5FF] underline-offset-4 hover:underline transition-all" href="mailto:jkakadi1@asu.edu">Email</a>
+</div>
+</div>
+</footer>
+<script>
+(function () {
+    var activeCls = 'nav-section-link text-[#00E5FF] font-bold border-b-2 border-[#00E5FF] pb-1';
+    var inactiveCls = 'nav-section-link text-slate-400 dark:text-[#a3aac4] hover:text-[#dee5ff] transition-colors border-b-2 border-transparent pb-1';
+    var links = document.querySelectorAll('a.nav-section-link[data-section]');
+    var sections = document.querySelectorAll('main section[id]');
+    function setActive(id) {
+        links.forEach(function (a) {
+            a.className = a.getAttribute('data-section') === id ? activeCls : inactiveCls;
         });
-
-        // ——— Magnetic-style buttons ———
-        document.querySelectorAll('.btn-magnetic').forEach(btn => {
-            btn.addEventListener('mousemove', function(e) {
-                const rect = btn.getBoundingClientRect();
-                const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
-                const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
-                btn.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
-            });
-            btn.addEventListener('mouseleave', function() {
-                btn.style.transform = 'translate(0, 0) scale(1)';
-            });
+    }
+    function updateFromScroll() {
+        var y = window.scrollY + 140;
+        var current = 'home';
+        sections.forEach(function (sec) {
+            if (sec.offsetTop <= y) current = sec.id;
         });
-
-        // ——— Typewriter ———
-        const texts = ["Software Developer @ ASU", "Experienced in React, TypeScript, Next.js, Python, AWS, Supabase..."];
-        const typewriterElement = document.getElementById("typewriter-subtitle");
-        let textIndex = 0, charIndex = 0, isDeleting = false;
-        function typeWriter() {
-            const currentText = texts[textIndex];
-            if (isDeleting) {
-                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                if (charIndex === 0) { isDeleting = false; textIndex = (textIndex + 1) % texts.length; setTimeout(typeWriter, 500); }
-                else setTimeout(typeWriter, 50);
-            } else {
-                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                if (charIndex === currentText.length) setTimeout(() => { isDeleting = true; typeWriter(); }, 2000);
-                else setTimeout(typeWriter, 100);
-            }
-        }
-        setTimeout(typeWriter, 500);
-
-        // ——— Mobile menu ———
-        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const menuIcon = document.getElementById("menu-icon");
-        const closeIcon = document.getElementById("close-icon");
-        mobileMenuBtn.addEventListener("click", function() {
-            mobileMenu.classList.toggle("hidden");
-            menuIcon.classList.toggle("hidden");
-            closeIcon.classList.toggle("hidden");
+        setActive(current);
+    }
+    window.addEventListener('scroll', updateFromScroll, { passive: true });
+    window.addEventListener('resize', updateFromScroll);
+    links.forEach(function (a) {
+        a.addEventListener('click', function () {
+            var id = (a.getAttribute('href') || '').replace('#', '');
+            if (id) setActive(id);
         });
-
-        // ——— Anchor clicks: Lenis if available, else native smooth scroll ———
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                e.preventDefault();
-                const el = document.querySelector(href);
-                if (!el) return;
-                if (lenis) lenis.scrollTo(el, { offset: -80 });
-                else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // ——— Navbar hide on scroll down + ScrollTrigger sync ———
-        let lastScrollY = 0;
-        const navbar = document.getElementById('navbar');
-        function onScroll() {
-            if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update();
-            const scroll = window.scrollY;
-            if (scroll > lastScrollY && scroll > 50) navbar.classList.add('-translate-y-full');
-            else navbar.classList.remove('-translate-y-full');
-            lastScrollY = scroll;
-        }
-        if (lenis) lenis.on('scroll', onScroll);
-        else window.addEventListener('scroll', onScroll, { passive: true });
-    </script>
+    });
+    updateFromScroll();
+})();
+</script>
 </body>
 </html>
