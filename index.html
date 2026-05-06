@@ -172,6 +172,191 @@
         .dark .hero-profile-wrap img { box-shadow: 0 25px 50px -12px rgba(99,102,241,0.25), 0 0 0 4px rgba(255,255,255,0.1); }
         .hero-parallax { transition: transform 0.12s ease-out; will-change: transform; }
         .hero-entrance { opacity: 0; transform: translateY(24px); }
+
+        /* === Redesigned Hero === */
+        .hero-greeting-pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 16px; border-radius: 999px;
+            background: rgba(99,102,241,0.10);
+            border: 1px solid rgba(99,102,241,0.22);
+            color: #4338ca;
+            font-weight: 600; font-size: 0.875rem;
+        }
+        .dark .hero-greeting-pill { background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.35); color: #c7d2fe; }
+        .hero-wave { display: inline-block; transform-origin: 70% 70%; animation: heroWave 2.6s ease-in-out infinite; }
+        @keyframes heroWave {
+            0%, 60%, 100% { transform: rotate(0); }
+            10%, 30% { transform: rotate(14deg); }
+            20%, 40% { transform: rotate(-8deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .hero-gradient-word {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 45%, #ec4899 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            animation: heroGradShift 7s ease-in-out infinite;
+            display: inline-block;
+        }
+        @keyframes heroGradShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-cta-primary {
+            background: #111827; color: #fff;
+            box-shadow: 0 14px 30px -12px rgba(17,24,39,0.45);
+        }
+        .hero-cta-primary:hover { background: #000; box-shadow: 0 18px 36px -12px rgba(17,24,39,0.55); }
+        .dark .hero-cta-primary { background: #ffffff; color: #111827; box-shadow: 0 14px 30px -12px rgba(255,255,255,0.18); }
+        .dark .hero-cta-primary:hover { background: #f3f4f6; }
+
+        .hero-cta-secondary {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(17,24,39,0.12);
+            color: #111827;
+        }
+        .hero-cta-secondary:hover { background: #fff; border-color: rgba(17,24,39,0.25); box-shadow: 0 14px 30px -14px rgba(17,24,39,0.22); }
+        .dark .hero-cta-secondary { background: rgba(31,41,55,0.7); border-color: rgba(255,255,255,0.12); color: #f9fafb; }
+        .dark .hero-cta-secondary:hover { background: rgba(31,41,55,0.95); }
+
+        .hero-social-pill {
+            width: 44px; height: 44px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(0,0,0,0.06);
+            color: #4b5563;
+            box-shadow: 0 8px 18px -10px rgba(0,0,0,0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease;
+        }
+        .hero-social-pill:hover {
+            transform: translateY(-3px);
+            color: #4f46e5;
+            background: #fff;
+            box-shadow: 0 14px 26px -10px rgba(99,102,241,0.4);
+        }
+        .dark .hero-social-pill {
+            background: rgba(31,41,55,0.7);
+            border-color: rgba(255,255,255,0.08);
+            color: #d1d5db;
+        }
+        .dark .hero-social-pill:hover { background: rgba(31,41,55,0.95); color: #a5b4fc; }
+
+        /* Photo + decorations */
+        .hero-photo-wrap { width: min(440px, 100%); aspect-ratio: 1; position: relative; margin: 0 auto; }
+        .hero-deco-circle-main {
+            position: absolute; inset: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(196,181,253,0.55), rgba(167,139,250,0.25) 60%, transparent 75%);
+        }
+        .hero-photo-frame {
+            position: absolute; inset: 7%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(229,231,255,0.35));
+            box-shadow: 0 30px 60px -20px rgba(99,102,241,0.4), 0 0 0 8px rgba(255,255,255,0.65) inset;
+            transition: transform 0.2s ease-out;
+            will-change: transform;
+        }
+        .dark .hero-photo-frame { box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6), 0 0 0 8px rgba(255,255,255,0.05) inset; }
+        .hero-photo-img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+            transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+        }
+        .hero-photo-frame:hover .hero-photo-img { transform: scale(1.04); }
+
+        .hero-deco-dot {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .hero-deco-dot-1 { width: 18px; height: 18px; bottom: 14%; left: -1%; background: #fcd5b5; box-shadow: 0 8px 16px -6px rgba(251,146,60,0.4); }
+        .hero-deco-dot-2 { width: 14px; height: 14px; top: 12%; right: 0%; background: #fb923c; box-shadow: 0 8px 16px -6px rgba(251,146,60,0.5); }
+        .hero-deco-squiggle {
+            position: absolute; top: 6%; left: 4%;
+            color: #6366f1; font-weight: 800; font-size: 1.4rem; letter-spacing: 2px;
+            transform: rotate(-12deg);
+            opacity: 0.65;
+            font-family: var(--font-display);
+        }
+        .hero-deco-grid {
+            position: absolute; top: 2%; right: -2%;
+            width: 78px; height: 78px;
+            background-image: radial-gradient(circle, rgba(99,102,241,0.45) 1.5px, transparent 1.6px);
+            background-size: 14px 14px;
+            opacity: 0.55;
+        }
+
+        /* Floating glass pill on photo */
+        .hero-float-pill {
+            position: absolute;
+            bottom: 8%; right: -6%;
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 18px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.7);
+            box-shadow: 0 22px 44px -18px rgba(17,24,39,0.22), 0 0 0 1px rgba(99,102,241,0.06);
+            animation: heroFloat 4.5s ease-in-out infinite;
+            max-width: 240px;
+            z-index: 5;
+        }
+        .dark .hero-float-pill { background: rgba(31,41,55,0.92); border-color: rgba(255,255,255,0.08); }
+        .hero-float-pill-icon {
+            flex-shrink: 0;
+            width: 40px; height: 40px;
+            border-radius: 12px;
+            background: rgba(99,102,241,0.12);
+            display: flex; align-items: center; justify-content: center;
+        }
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @media (max-width: 640px) {
+            .hero-float-pill { right: 0; bottom: -2%; max-width: 220px; padding: 12px 14px; }
+            .hero-deco-squiggle { font-size: 1.05rem; }
+            .hero-deco-grid { width: 56px; height: 56px; }
+        }
+
+        /* Stats strip */
+        .hero-stats-card {
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.7);
+            box-shadow: 0 24px 50px -20px rgba(17,24,39,0.18);
+        }
+        .dark .hero-stats-card { background: rgba(31,41,55,0.7); border-color: rgba(255,255,255,0.06); box-shadow: 0 24px 50px -20px rgba(0,0,0,0.5); }
+        .hero-stat-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 12px; border-radius: 16px;
+            transition: background 0.2s ease;
+        }
+        .hero-stat-item:hover { background: rgba(99,102,241,0.06); }
+        .dark .hero-stat-item:hover { background: rgba(99,102,241,0.12); }
+        .hero-stat-icon {
+            flex-shrink: 0;
+            width: 44px; height: 44px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-stat-text { display: flex; flex-direction: column; min-width: 0; }
+        .hero-stat-number { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; color: #111827; }
+        .dark .hero-stat-number { color: #f9fafb; }
+        .hero-stat-label { font-size: 0.8rem; color: #6b7280; line-height: 1.2; margin-top: 2px; }
+        .dark .hero-stat-label { color: #9ca3af; }
+        @media (min-width: 768px) {
+            .hero-stat-number { font-size: 1.75rem; }
+            .hero-stat-label { font-size: 0.875rem; }
+        }
     </style>
 </head>
 <body class="smooth-scroll smooth-scroll-content">
@@ -226,36 +411,119 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 overflow-hidden gradient-mesh">
+    <section id="home" class="relative min-h-screen flex items-center bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 overflow-hidden gradient-mesh pt-24 pb-12">
         <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
         <div class="pointer-events-none absolute inset-0 z-0 hero-background"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <div id="hero-glass-card" class="hero-glass-card hero-entrance px-8 py-10 sm:px-12 sm:py-14 md:px-16 md:py-16 max-w-2xl">
-                <div class="flex flex-col items-center text-center">
-                    <div id="hero-profile-wrap" class="hero-profile-wrap mb-6">
-                        <img id="hero-profile-img" src="public/profile.png" alt="Jeel Kakadiya profile photo" class="border-4 border-indigo-200 dark:border-indigo-700 object-cover w-32 h-32 sm:w-36 sm:h-36">
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left: Text & CTAs -->
+                <div class="order-2 lg:order-1 text-center lg:text-left">
+                    <div id="hero-greeting" class="hero-entrance hero-greeting-pill mb-6">
+                        <span>Hey there!</span>
+                        <span class="hero-wave">👋</span>
                     </div>
-                    <h1 class="font-display text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-                        <span id="hero-hi" class="hero-entrance block">Hi, I'm</span>
-                        <span id="hero-name" class="hero-entrance block text-indigo-600 dark:text-indigo-400">
-                            Jeel Kakadiya
-                        </span>
-                        <span id="hero-title-wrap" class="hero-entrance block text-indigo-600 dark:text-indigo-400 min-h-[1.5em] flex items-center justify-center mt-2 text-2xl sm:text-3xl md:text-4xl">
-                            <span id="typewriter-subtitle" class="inline-block"></span>
-                            <span class="typewriter-cursor text-indigo-600 dark:text-indigo-400">|</span>
-                        </span>
+
+                    <h1 id="hero-headline" class="hero-entrance font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.05] mb-6">
+                        I build digital
+                        <span class="hero-gradient-word">experiences</span>
+                        that matter.
                     </h1>
-                    <p id="hero-desc" class="hero-entrance mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                        A passionate Software Developer specializing in building exceptional digital experiences.
-                        Currently pursuing Master's in Computer Science at Arizona State University.
+
+                    <p id="hero-desc" class="hero-entrance text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                        I'm a passionate software developer who loves turning ideas into reality through clean code and modern technologies.
                     </p>
-                    <div id="hero-btns" class="hero-entrance mt-8 max-w-md mx-auto flex flex-col sm:flex-row sm:justify-center gap-4">
-                        <a href="#contact" class="btn-magnetic inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-white dark:border-gray-700/50 text-indigo-700 dark:text-indigo-200 hover:bg-white dark:hover:bg-gray-800 hover:shadow-xl transition-all duration-200 gap-2 group">
-                            Get in touch
+
+                    <div id="hero-btns" class="hero-entrance flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+                        <a href="#projects" class="hero-cta-primary inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-200 group">
+                            View My Work
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
-                        <a href="#projects" class="btn-magnetic inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold shadow-lg bg-indigo-600 text-white hover:bg-indigo-500 hover:shadow-xl transition-all duration-200 gap-2 group">
-                            View Projects
+                        <a href="#contact" class="hero-cta-secondary inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-200 group">
+                            Get In Touch
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                         </a>
+                    </div>
+
+                    <div id="hero-socials" class="hero-entrance flex items-center gap-4 justify-center lg:justify-start">
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Find me on</span>
+                        <div class="flex items-center gap-3">
+                            <a href="https://github.com/JeelKakadiya3240" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hero-social-pill">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jeelkakadiya/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hero-social-pill">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
+                            </a>
+                            <a href="mailto:jkakadi1@asu.edu" aria-label="Email" class="hero-social-pill">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Photo + Decorations + Float Pill -->
+                <div class="order-1 lg:order-2 relative flex items-center justify-center">
+                    <div id="hero-photo-wrap" class="hero-entrance hero-photo-wrap">
+                        <div class="hero-deco-circle-main"></div>
+                        <div class="hero-deco-dot hero-deco-dot-1"></div>
+                        <div class="hero-deco-dot hero-deco-dot-2"></div>
+                        <div class="hero-deco-squiggle">~~~</div>
+                        <div class="hero-deco-grid"></div>
+
+                        <div id="hero-photo-frame" class="hero-photo-frame">
+                            <img id="hero-profile-img" src="public/profile.png" alt="Jeel Kakadiya" class="hero-photo-img">
+                        </div>
+
+                        <div id="hero-float-pill" class="hero-entrance hero-float-pill">
+                            <div class="hero-float-pill-icon">
+                                <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                            </div>
+                            <div class="hero-float-pill-text">
+                                <div class="text-xs text-gray-500 dark:text-gray-400 leading-tight">Building scalable</div>
+                                <div class="text-sm font-semibold text-gray-900 dark:text-white leading-tight">solutions with <span id="typewriter-subtitle" class="text-indigo-600 dark:text-indigo-400"></span><span class="typewriter-cursor text-indigo-600 dark:text-indigo-400">|</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Strip -->
+            <div id="hero-stats" class="hero-entrance mt-14 lg:mt-20">
+                <div class="hero-stats-card grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-4 md:p-5 rounded-3xl">
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                        </div>
+                        <div class="hero-stat-text">
+                            <div class="hero-stat-number">2+</div>
+                            <div class="hero-stat-label">Years Coding</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div class="hero-stat-text">
+                            <div class="hero-stat-number">10+</div>
+                            <div class="hero-stat-label">Projects Completed</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                        </div>
+                        <div class="hero-stat-text">
+                            <div class="hero-stat-number">Master's</div>
+                            <div class="hero-stat-label">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-icon bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                        </div>
+                        <div class="hero-stat-text">
+                            <div class="hero-stat-number">Always</div>
+                            <div class="hero-stat-label">Learning</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -726,40 +994,41 @@
             });
         })();
 
-        // ——— Hero entrance: reveal glass card and content (fixes blank hero) ———
+        // ——— Hero entrance: reveal new two-column hero content ———
         (function() {
             var hero = document.getElementById('home');
-            var card = document.getElementById('hero-glass-card');
-            var profileWrap = document.getElementById('hero-profile-wrap');
-            if (!card || !hero) return;
+            if (!hero) return;
+            var photoFrame = document.getElementById('hero-photo-frame');
 
             if (typeof gsap !== 'undefined') {
-                gsap.to(card, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', overwrite: true });
-                gsap.to('#hero-hi', { opacity: 1, y: 0, duration: 0.55, delay: 0.15, ease: 'power2.out' });
-                gsap.to('#hero-name', { opacity: 1, y: 0, duration: 0.55, delay: 0.28, ease: 'power2.out' });
-                gsap.to('#hero-title-wrap', { opacity: 1, y: 0, duration: 0.55, delay: 0.42, ease: 'power2.out' });
-                gsap.to('#hero-desc', { opacity: 1, y: 0, duration: 0.55, delay: 0.55, ease: 'power2.out' });
-                gsap.to('#hero-btns', { opacity: 1, y: 0, duration: 0.55, delay: 0.7, ease: 'power2.out' });
+                gsap.to('#hero-greeting',   { opacity: 1, y: 0, duration: 0.55, delay: 0.10, ease: 'power2.out' });
+                gsap.to('#hero-headline',   { opacity: 1, y: 0, duration: 0.80, delay: 0.22, ease: 'power3.out' });
+                gsap.to('#hero-desc',       { opacity: 1, y: 0, duration: 0.55, delay: 0.42, ease: 'power2.out' });
+                gsap.to('#hero-btns',       { opacity: 1, y: 0, duration: 0.55, delay: 0.55, ease: 'power2.out' });
+                gsap.to('#hero-socials',    { opacity: 1, y: 0, duration: 0.55, delay: 0.68, ease: 'power2.out' });
+                gsap.to('#hero-photo-wrap', { opacity: 1, y: 0, duration: 0.85, delay: 0.20, ease: 'power3.out' });
+                gsap.to('#hero-float-pill', { opacity: 1, y: 0, duration: 0.60, delay: 0.85, ease: 'back.out(1.4)' });
+                gsap.to('#hero-stats',      { opacity: 1, y: 0, duration: 0.70, delay: 0.95, ease: 'power3.out' });
             } else {
-                card.style.opacity = '1';
-                card.style.transform = 'none';
-                [].forEach.call(hero.querySelectorAll('.hero-entrance'), function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+                [].forEach.call(hero.querySelectorAll('.hero-entrance'), function(el) {
+                    el.style.opacity = '1'; el.style.transform = 'none';
+                });
             }
 
+            // Subtle parallax on the round photo only (decorations + float pill stay put)
             var mx = 0, my = 0, tx = 0, ty = 0;
             hero.addEventListener('mousemove', function(e) {
                 var rect = hero.getBoundingClientRect();
                 var x = (e.clientX - rect.left) / rect.width - 0.5;
                 var y = (e.clientY - rect.top) / rect.height - 0.5;
-                tx = x * 6;
-                ty = y * -6;
+                tx = x * 10;
+                ty = y * -10;
             });
             hero.addEventListener('mouseleave', function() { tx = ty = 0; });
             function parallax() {
                 mx += (tx - mx) * 0.06;
                 my += (ty - my) * 0.06;
-                if (card) card.style.transform = 'rotateY(' + mx + 'deg) rotateX(' + my + 'deg) translateZ(0)';
-                if (profileWrap) profileWrap.style.transform = 'rotateY(' + (mx * 0.5) + 'deg) rotateX(' + (my * 0.5) + 'deg)';
+                if (photoFrame) photoFrame.style.transform = 'translate3d(' + (mx * 0.5) + 'px,' + (-my * 0.5) + 'px,0)';
                 requestAnimationFrame(parallax);
             }
             requestAnimationFrame(parallax);
@@ -793,11 +1062,12 @@
             });
         });
 
-        // ——— Typewriter ———
-        const texts = ["Software Developer @ ASU", "Experienced in React, TypeScript, Next.js, Python, AWS, Supabase..."];
+        // ——— Typewriter (rotates inside the hero floating pill) ———
+        const texts = ["code", "React", "TypeScript", "Node.js", "AWS", "Python"];
         const typewriterElement = document.getElementById("typewriter-subtitle");
         let textIndex = 0, charIndex = 0, isDeleting = false;
         function typeWriter() {
+            if (!typewriterElement) return;
             const currentText = texts[textIndex];
             if (isDeleting) {
                 typewriterElement.textContent = currentText.substring(0, charIndex - 1);
@@ -807,8 +1077,8 @@
             } else {
                 typewriterElement.textContent = currentText.substring(0, charIndex + 1);
                 charIndex++;
-                if (charIndex === currentText.length) setTimeout(() => { isDeleting = true; typeWriter(); }, 2000);
-                else setTimeout(typeWriter, 100);
+                if (charIndex === currentText.length) setTimeout(() => { isDeleting = true; typeWriter(); }, 1800);
+                else setTimeout(typeWriter, 110);
             }
         }
         setTimeout(typeWriter, 500);
