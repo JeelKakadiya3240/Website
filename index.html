@@ -335,8 +335,20 @@
         .rd .say-hello { transition: border-color .2s ease; }
         .rd .say-hello:hover { border-color:#0e7c6f; }
 
-        .rd .exp-row { transition: background .25s ease; }
-        .rd .exp-row:hover { background: rgba(255,255,255,0.6); }
+        .rd .exp-row { position: relative; }
+        .rd .exp-row > * { position: relative; z-index: 1; }
+        .rd .exp-row::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 50%;
+            width: 100vw;
+            transform: translateX(-50%);
+            background: transparent;
+            transition: background .25s ease;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .rd .exp-row:hover::before { background: rgba(255,255,255,0.7); }
 
         .rd .proj-row { transition: background .25s ease; }
         .rd .proj-row:hover { background: rgba(255,255,255,0.04); }
