@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --font-display: 'Outfit', sans-serif;
@@ -325,6 +326,40 @@
             .hero-stat-number { font-size: 1.75rem; }
             .hero-stat-label { font-size: 0.875rem; }
         }
+
+        /* ===== Redesign sections (About → Footer). Hero is untouched. ===== */
+        .rd { font-family: 'Poppins', system-ui, sans-serif; }
+        .rd h1, .rd h2, .rd h3 { font-family: 'Poppins', system-ui, sans-serif; }
+        .rd ul { margin: 0; padding: 0; list-style: none; }
+
+        .rd .say-hello { transition: border-color .2s ease; }
+        .rd .say-hello:hover { border-color:#0e7c6f; }
+
+        .rd .exp-row { transition: background .25s ease; }
+        .rd .exp-row:hover { background: rgba(255,255,255,0.6); }
+
+        .rd .proj-row { transition: background .25s ease; }
+        .rd .proj-row:hover { background: rgba(255,255,255,0.04); }
+
+        .rd .skill-tag { transition: background .2s ease, color .2s ease; }
+        .rd .skill-tag:hover { background:#d9f2ea; color:#0b675c; }
+
+        .rd .contact-btn-dark { transition: background .2s ease, color .2s ease; }
+        .rd .contact-btn-dark:hover { background:#0e7c6f; color:#ffffff; }
+        .rd .contact-btn-outline { transition: border-color .2s ease, color .2s ease; }
+        .rd .contact-btn-outline:hover { border-color:#0e7c6f; color:#0e7c6f; }
+
+        @media (max-width: 960px) {
+            .rd .grid-head { grid-template-columns:1fr !important; gap:24px !important; align-items:start !important; }
+            .rd .about-cols { grid-template-columns:1fr !important; gap:32px !important; }
+            .rd .grid-exp-row { grid-template-columns:1fr !important; gap:18px !important; }
+            .rd .grid-skill-row { grid-template-columns:1fr !important; gap:10px !important; }
+            .rd .grid-proj-row { grid-template-columns:1fr !important; gap:14px !important; }
+            .rd .grid-skill-wrap { grid-template-columns:1fr !important; column-gap:0 !important; }
+            .rd .grid-contact { grid-template-columns:1fr !important; gap:36px !important; }
+            .rd.sec-pad { padding-top:72px !important; padding-bottom:72px !important; }
+            .rd .footer-inner { flex-direction:column !important; gap:10px !important; text-align:center; }
+        }
     </style>
 </head>
 <body class="smooth-scroll smooth-scroll-content">
@@ -483,530 +518,320 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-reveal py-20 bg-white dark:bg-gray-900 pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-gray-900 dark:text-gray-400 font-semibold tracking-wide uppercase">About</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-                    A bit about me
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-                    I am a Master's graduate in Information Technology from Arizona State University, with a strong foundation in software development and a passion for creating innovative solutions.
-                </p>
-            </div>
 
-            <div class="mt-10">
-                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Education</h3>
-                            <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
-                                Master of Science in Information Technology<br>
-                                Arizona State University<br>
-                                Graduated: May 2026
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
-                            </svg>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">What I Do</h3>
-                            <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
-                                I design and ship full-stack web applications, scalable cloud APIs, and data pipelines that turn messy real-world data into reliable, user-friendly products with a focus on clean code, performance, and shipping fast.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ===== ABOUT (redesign) ===== -->
+    <section id="about" class="rd sec-pad" style="background:#ffffff; padding:120px 24px 110px; font-family:'Poppins',system-ui,sans-serif">
+      <div class="grid-head" style="max-width:1216px; margin:0 auto; display:grid; grid-template-columns:360px 1fr; gap:80px">
+        <div class="stagger-item">
+          <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">
+            <span style="color:#0e7c6f">01</span>
+            <span style="width:26px; height:1px; background:#d8dce1"></span>About
+          </div>
+          <h2 style="font-size:clamp(34px,5vw,46px); line-height:1.06; font-weight:800; letter-spacing:-0.035em; margin:20px 0 0; color:#101720">A bit<br>about me</h2>
+          <a href="#contact" class="say-hello" style="display:inline-flex; align-items:center; gap:10px; margin-top:28px; font-size:15px; font-weight:600; color:#0e7c6f; border-bottom:1px solid rgba(14,124,111,0.3); padding-bottom:3px">Say hello <span>&#8594;</span></a>
         </div>
+        <div class="stagger-item">
+          <p style="font-size:clamp(22px,3.2vw,30px); line-height:1.42; font-weight:500; letter-spacing:-0.02em; color:#1a2230; margin:0">Master&rsquo;s graduate in Information Technology from Arizona State University, with a strong foundation in software development and a passion for creating <span style="color:#0e7c6f">innovative solutions</span>.</p>
+          <div class="about-cols" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:56px">
+            <div style="border-top:1px solid #e5e8ec; padding-top:22px">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8d949e">Education</div>
+              <div style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin-top:14px; color:#101720">Master of Science in Information Technology</div>
+              <div style="font-size:16px; color:#5c6470; margin-top:8px; line-height:1.6">Arizona State University<br>Graduated May 2026</div>
+            </div>
+            <div style="border-top:1px solid #e5e8ec; padding-top:22px">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8d949e">What I do</div>
+              <div style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin-top:14px; color:#101720">Full-stack apps, cloud APIs, data pipelines</div>
+              <div style="font-size:16px; color:#5c6470; margin-top:8px; line-height:1.6">I turn messy real-world data into reliable products, with a focus on clean code, performance, and shipping fast.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section-reveal py-20 bg-gray-50 dark:bg-gray-800">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-base text-gray-900 dark:text-gray-400 font-semibold tracking-wide uppercase mb-2">WORK EXPERIENCE</h2>
-          <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-            Professional Experience
-          </p>
+    <!-- ===== EXPERIENCE (redesign) ===== -->
+    <section id="experience" class="rd sec-pad" style="background:#f6f7f9; padding:110px 24px 100px; font-family:'Poppins',system-ui,sans-serif">
+      <div style="max-width:1216px; margin:0 auto">
+        <div class="grid-head" style="display:grid; grid-template-columns:360px 1fr; gap:80px; align-items:end">
+          <div class="stagger-item">
+            <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">
+              <span style="color:#0e7c6f">02</span>
+              <span style="width:26px; height:1px; background:#d8dce1"></span>Experience
+            </div>
+            <h2 style="font-size:clamp(34px,5vw,46px); line-height:1.06; font-weight:800; letter-spacing:-0.035em; margin:20px 0 0; color:#101720">Where I&rsquo;ve<br>worked</h2>
+          </div>
+          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#5c6470; margin:0 0 8px; max-width:520px">Four roles across product engineering, platform APIs, and data infrastructure &mdash; from a research university to early-stage teams.</p>
         </div>
 
-        <!-- Experience Items -->
-        <div class="space-y-8">
+        <div style="margin-top:64px; display:grid; gap:0">
           <!-- RemoGPT -->
-          <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-              <div class="mb-3 sm:mb-0">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  Software Engineer
-                </h3>
-                <p class="text-gray-900 dark:text-gray-400 font-semibold">RemoGPT™ · Part-time</p>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Tempe, AZ, USA · Hybrid</p>
-              </div>
-              <div class="inline-flex items-center self-start px-3 py-1 rounded-full text-xs font-semibold bg-gray-50 text-gray-800 border border-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">
-                Jun 2026 – Present
-              </div>
+          <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#0b675c; background:#d9f2ea; padding:6px 12px; border-radius:999px; white-space:nowrap">Jun 2026 &mdash; Present</div>
+              <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">RemoGPT&trade;</div>
+              <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Part-time<br>Tempe, AZ &middot; Hybrid</div>
             </div>
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Building the Agent and Lender portals to simplify and streamline the home buying and mortgage process.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Developing end-to-end features across the frontend, backend, APIs, and database architecture.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Designing and integrating REST APIs, authentication, and third-party services to support platform functionality.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Collaborating on AI-powered workflows and scalable solutions to improve the experience for agents, lenders, and homebuyers.</span>
-              </li>
-            </ul>
+            <div>
+              <h3 style="font-size:clamp(22px,3vw,30px); font-weight:700; letter-spacing:-0.03em; margin:0; color:#101720">Software Engineer</h3>
+              <ul style="margin-top:22px; display:grid; gap:14px; list-style:none; padding:0">
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">01</span>Building the Agent and Lender portals to simplify and streamline the home buying and mortgage process.</li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">02</span>Developing end-to-end features across the frontend, backend, APIs, and database architecture.</li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">03</span>Designing and integrating REST APIs, authentication, and third-party services to support platform functionality.</li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">04</span>Collaborating on AI-powered workflows and scalable solutions to improve the experience for agents, lenders, and homebuyers.</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- Cypress Bridge Group -->
-          <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-              <div class="mb-3 sm:mb-0">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  Software/Web Development Intern
-                </h3>
-                <p class="text-gray-900 dark:text-gray-400 font-semibold">Cypress Bridge Group, LLC</p>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Remote, AZ, USA</p>
-              </div>
-              <div class="inline-flex items-center self-start px-3 py-1 rounded-full text-xs font-semibold bg-gray-50 text-gray-800 border border-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">
-                Jan 2026 – May 2026
-              </div>
+          <!-- Cypress Bridge -->
+          <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">Jan 2026 &mdash; May 2026</div>
+              <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">Cypress Bridge Group, LLC</div>
+              <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Internship<br>Remote, AZ</div>
             </div>
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Implemented user-facing features and backend endpoints using React/Next.js and Node.js, Django, and Flask across web applications.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Orchestrated ETL workflows to replace manual CSV imports by ingesting official government datasets into Supabase, improving data refresh speed by 70%.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Implemented role-based access control for reports using Supabase authentication with JWT-based session management.</span>
-              </li>
-            </ul>
+            <div>
+              <h3 style="font-size:clamp(22px,3vw,30px); font-weight:700; letter-spacing:-0.03em; margin:0; color:#101720">Software / Web Development Intern</h3>
+              <ul style="margin-top:22px; display:grid; gap:14px; list-style:none; padding:0">
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">01</span>Implemented user-facing features and backend endpoints using React/Next.js, Node.js, Django, and Flask.</li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">02</span><span>Orchestrated ETL workflows replacing manual CSV imports by ingesting official government datasets into Supabase, with <span style="color:#101720; font-weight:600">70% faster data refresh</span>.</span></li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">03</span>Implemented role-based access control for reports using Supabase authentication with JWT-based session management.</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- Arizona State University -->
-          <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-              <div class="mb-3 sm:mb-0">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  Software Developer Intern
-                </h3>
-                <a href="https://www.asu.edu/" target="_blank" class="text-gray-900 dark:text-gray-400 font-semibold hover:underline">Arizona State University</a>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Tempe, AZ, USA</p>
-              </div>
-              <div class="inline-flex items-center self-start px-3 py-1 rounded-full text-xs font-semibold bg-gray-50 text-gray-800 border border-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">
-                May 2025 – May 2026
-              </div>
+          <!-- ASU -->
+          <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">May 2025 &mdash; May 2026</div>
+              <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">Arizona State University</div>
+              <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Internship<br>Tempe, AZ</div>
             </div>
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Implemented event-driven data processing workflows using Kafka to improve system throughput and fault tolerance for analytics pipelines.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Designed and deployed APIs using Python (FastAPI) and Node.js on AWS to automate reporting pipelines processing 100K+ records per day.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Developed a serverless transportation system with TypeScript, React, and AWS Lambda supporting scheduling and real-time tracking for 500+ campus users.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Standardized deployment using Docker, Jenkins, and GitHub Actions, reducing release overhead and improving deployment reliability.</span>
-              </li>
-            </ul>
+            <div>
+              <h3 style="font-size:clamp(22px,3vw,30px); font-weight:700; letter-spacing:-0.03em; margin:0; color:#101720">Software Developer Intern</h3>
+              <ul style="margin-top:22px; display:grid; gap:14px; list-style:none; padding:0">
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">01</span>Implemented event-driven data processing workflows using Kafka to improve throughput and fault tolerance for analytics pipelines.</li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">02</span><span>Designed and deployed APIs with Python (FastAPI) and Node.js on AWS to automate reporting pipelines processing <span style="color:#101720; font-weight:600">100K+ records per day</span>.</span></li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">03</span>Developed a serverless transportation system with TypeScript, React, and AWS Lambda supporting scheduling and real-time tracking for 500+ campus users.</li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">04</span>Standardized deployment using Docker, Jenkins, and GitHub Actions, reducing release overhead.</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- VBI Infotech -->
-          <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-shadow duration-300">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-              <div class="mb-3 sm:mb-0">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  Software Developer Intern
-                </h3>
-                <p class="text-gray-900 dark:text-gray-400 font-semibold">VBI Infotech</p>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Surat, India</p>
-              </div>
-              <div class="inline-flex items-center self-start px-3 py-1 rounded-full text-xs font-semibold bg-gray-50 text-gray-800 border border-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">
-                Jan 2024 – Aug 2024
-              </div>
+          <!-- VBI -->
+          <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea; border-bottom:1px solid #e2e5ea">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">Jan 2024 &mdash; Aug 2024</div>
+              <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">VBI Infotech</div>
+              <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Internship<br>Surat, India</div>
             </div>
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Created the initial relational database schema for an internal reporting module, covering 8–10 core entities and reducing query latency by 30%.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Built backend functionality using Python and FastAPI to support application features such as data retrieval, filtering, and reporting.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-900 dark:text-gray-400 mr-2 mt-1">•</span>
-                <span class="text-gray-700 dark:text-gray-300">Added data ingestion and processing logic to handle periodic updates, enabling reliable storage and access to structured data.</span>
-              </li>
-            </ul>
+            <div>
+              <h3 style="font-size:clamp(22px,3vw,30px); font-weight:700; letter-spacing:-0.03em; margin:0; color:#101720">Software Developer Intern</h3>
+              <ul style="margin-top:22px; display:grid; gap:14px; list-style:none; padding:0">
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">01</span><span>Created the initial relational schema for an internal reporting module covering 8&ndash;10 core entities, with <span style="color:#101720; font-weight:600">30% lower query latency</span>.</span></li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">02</span>Built backend functionality with Python and FastAPI for data retrieval, filtering, and reporting.</li>
+                <li style="display:grid; grid-template-columns:20px 1fr; gap:8px; font-size:16px; line-height:1.62; color:#404955"><span style="color:#0e7c6f; font-family:'IBM Plex Mono',monospace; font-size:13px; padding-top:3px">03</span>Added ingestion and processing logic for periodic updates, enabling reliable storage and access to structured data.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section-reveal py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-base text-gray-900 dark:text-gray-400 font-semibold tracking-wide uppercase">Skills</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-                    Technical Expertise
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-                    A comprehensive set of skills I've developed through my academic and professional journey
-                </p>
+    <!-- ===== SKILLS (redesign) ===== -->
+    <section id="skills" class="rd sec-pad" style="background:#ffffff; padding:110px 24px 100px; font-family:'Poppins',system-ui,sans-serif">
+      <div style="max-width:1216px; margin:0 auto">
+        <div class="grid-head" style="display:grid; grid-template-columns:360px 1fr; gap:80px; align-items:end">
+          <div class="stagger-item">
+            <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">
+              <span style="color:#0e7c6f">03</span>
+              <span style="width:26px; height:1px; background:#d8dce1"></span>Skills
             </div>
-
-            <div class="mt-10">
-                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Programming Languages -->
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md transition-all duration-300">
-                        <div class="px-5 py-5 sm:p-6">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white font-display">Programming Languages</h3>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Java</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Python</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">JavaScript</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">TypeScript</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">C++</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">SQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Web Technologies -->
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md transition-all duration-300">
-                        <div class="px-5 py-5 sm:p-6">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white font-display">Web Technologies</h3>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">React</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Next.js</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Node.js</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">HTML5</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">CSS3</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Tailwind CSS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cloud & DevOps -->
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md transition-all duration-300">
-                        <div class="px-5 py-5 sm:p-6">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white font-display">Cloud &amp; DevOps</h3>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">AWS</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Docker</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Git</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">CI/CD</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">REST APIs</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Microservices</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Databases -->
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md transition-all duration-300">
-                        <div class="px-5 py-5 sm:p-6">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white font-display">Databases</h3>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">MongoDB</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">PostgreSQL</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">MySQL</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Redis</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tools & Frameworks -->
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md transition-all duration-300">
-                        <div class="px-5 py-5 sm:p-6">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4l-7 7m7-7a7 7 0 11-7 7m11-3l4 4-4 4m4-4H8"/></svg>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white font-display">Tools &amp; Frameworks</h3>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Spring Boot</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Express.js</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">GraphQL</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">JUnit</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Maven</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Gradle</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AI & Machine Learning -->
-                    <div class="stagger-item card-3d bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md transition-all duration-300">
-                        <div class="px-5 py-5 sm:p-6">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 7h10v10H7V7z"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 10.5h3v3h-3z"/></svg>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white font-display">AI &amp; Machine Learning</h3>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">MCP Servers</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">LLM Integration</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">RAG</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Prompt Engineering</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">NLP</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 style="font-size:clamp(34px,5vw,46px); line-height:1.06; font-weight:800; letter-spacing:-0.035em; margin:20px 0 0; color:#101720">Technical<br>expertise</h2>
+          </div>
+          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#5c6470; margin:0 0 8px; max-width:520px">The toolkit I reach for &mdash; built through graduate coursework and shipping production software.</p>
         </div>
+
+        <div class="grid-skill-wrap" style="margin-top:56px; display:grid; grid-template-columns:1fr 1fr; column-gap:80px">
+          <div class="grid-skill-row stagger-item" style="display:grid; grid-template-columns:190px 1fr; gap:32px; padding:26px 0; border-top:1px solid #e5e8ec; align-items:start">
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#101720">Languages</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px">
+              <span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Java</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Python</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">JavaScript</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">TypeScript</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">C++</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">SQL</span>
+            </div>
+          </div>
+          <div class="grid-skill-row stagger-item" style="display:grid; grid-template-columns:190px 1fr; gap:32px; padding:26px 0; border-top:1px solid #e5e8ec; align-items:start">
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#101720">Web</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px">
+              <span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">React</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Next.js</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Node.js</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">HTML5</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">CSS3</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="grid-skill-row stagger-item" style="display:grid; grid-template-columns:190px 1fr; gap:32px; padding:26px 0; border-top:1px solid #e5e8ec; align-items:start">
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#101720">Cloud &amp; DevOps</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px">
+              <span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">AWS</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Docker</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Git</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">CI/CD</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">REST APIs</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Microservices</span>
+            </div>
+          </div>
+          <div class="grid-skill-row stagger-item" style="display:grid; grid-template-columns:190px 1fr; gap:32px; padding:26px 0; border-top:1px solid #e5e8ec; align-items:start">
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#101720">Databases</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px">
+              <span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">MongoDB</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">PostgreSQL</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">MySQL</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Redis</span>
+            </div>
+          </div>
+          <div class="grid-skill-row stagger-item" style="display:grid; grid-template-columns:190px 1fr; gap:32px; padding:26px 0; border-top:1px solid #e5e8ec; align-items:start">
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#101720">Tools &amp; Frameworks</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px">
+              <span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Spring Boot</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Express.js</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">GraphQL</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">JUnit</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Maven</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Gradle</span>
+            </div>
+          </div>
+          <div class="grid-skill-row stagger-item" style="display:grid; grid-template-columns:190px 1fr; gap:32px; padding:26px 0; border-top:1px solid #e5e8ec; border-bottom:1px solid #e5e8ec; align-items:start">
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#101720">AI &amp; ML</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px">
+              <span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">MCP Servers</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">LLM Integration</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">RAG</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">Prompt Engineering</span><span class="skill-tag" style="font-size:14px; color:#404955; background:#f4f5f7; padding:7px 13px; border-radius:8px">NLP</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section-reveal py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-base text-gray-900 dark:text-gray-400 font-semibold tracking-wide uppercase mb-2">Featured Projects</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-                    Featured Projects
-                </p>
+    <!-- ===== PROJECTS (redesign) ===== -->
+    <section id="projects" class="rd sec-pad" style="background:#0d1117; color:#ffffff; padding:110px 24px 100px; font-family:'Poppins',system-ui,sans-serif">
+      <div style="max-width:1216px; margin:0 auto">
+        <div class="grid-head" style="display:grid; grid-template-columns:360px 1fr; gap:80px; align-items:end">
+          <div class="stagger-item">
+            <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#7d8794">
+              <span style="color:#41c9b4">04</span>
+              <span style="width:26px; height:1px; background:#2c343d"></span>Projects
             </div>
-            <div class="grid gap-8 md:grid-cols-2">
-                <!-- Lokellist -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 p-6 flex flex-col">
-                    <div class="flex items-start justify-between mb-3 gap-3">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">Web App</span>
-                        <span class="text-xs font-medium text-gray-400 dark:text-gray-500">Live</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Lokellist</h3>
-                    <p class="text-gray-900 dark:text-gray-400 font-medium text-sm mb-3">Real Estate &amp; Property Listings Platform</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        A real estate platform for browsing and managing property listings, connecting buyers, agents, and sellers.
-                        Built end-to-end with a React frontend, Node.js backend, REST APIs, and secure authentication.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5 mb-4">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">React</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Node.js</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">REST APIs</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Authentication</span>
-                    </div>
-                    <a href="https://www.lokellist.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-900 dark:text-gray-400 font-semibold hover:gap-3 transition-all text-sm group">
-                        Project Overview <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
+            <h2 style="font-size:clamp(34px,5vw,46px); line-height:1.06; font-weight:800; letter-spacing:-0.035em; margin:20px 0 0; color:#ffffff">Selected<br>work</h2>
+          </div>
+          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#98a1ac; margin:0 0 8px; max-width:520px">Platforms and tools I designed, built, and shipped end to end.</p>
+        </div>
 
-                <!-- Smart DART -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 p-6 flex flex-col">
-                    <div class="flex items-start justify-between mb-3 gap-3">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">Web App</span>
-                        <span class="text-xs font-medium text-gray-400 dark:text-gray-500">ASU</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Smart DART</h3>
-                    <p class="text-gray-900 dark:text-gray-400 font-medium text-sm mb-3">Arizona State University</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        Arizona State University's on-campus golf cart ride management platform for approved riders.
-                        Built a scalable system to manage riders, drivers, carts, and schedules with secure ASU authentication.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5 mb-4">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">React</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Vite</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">AWS Lambda</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">API Gateway</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Terraform</span>
-                    </div>
-                    <a href="https://dartcms.apps.asu.edu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-900 dark:text-gray-400 font-semibold hover:gap-3 transition-all text-sm group">
-                        Project Overview <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
-
-                <!-- Resume.io -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 p-6 flex flex-col">
-                    <div class="flex items-start justify-between mb-3 gap-3">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">AI / ML</span>
-                        <span class="text-xs font-medium text-gray-400 dark:text-gray-500">Personal</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Resume.io</h3>
-                    <p class="text-gray-900 dark:text-gray-400 font-medium text-sm mb-3">AI-Powered Resume Analysis</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        AI-powered resume analysis platform leveraging NLP (BERT, TF-IDF) to evaluate and score resumes.
-                        Optimized backend with Redis caching for 40% faster responses and AWS serverless deployment.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5 mb-4">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Python</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">FastAPI</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">React</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">AWS</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Docker</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">GitHub Actions</span>
-                    </div>
-                    <a href="https://github.com/JeelKakadiya3240/Professional_Resume_Builder" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-900 dark:text-gray-400 font-semibold hover:gap-3 transition-all text-sm group">
-                        Repository <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
-
-                <!-- Email Automation Script -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 p-6 flex flex-col">
-                    <div class="flex items-start justify-between mb-3 gap-3">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">Tool</span>
-                        <span class="text-xs font-medium text-gray-400 dark:text-gray-500">Personal</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Email Automation Script</h3>
-                    <p class="text-gray-900 dark:text-gray-400 font-medium text-sm mb-3">Bulk Email Tool</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        Python-based script to send personalized emails to multiple recipients from an Excel list.
-                        Supports 3,000+ email sends using Gmail SMTP with TLS for secure delivery.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5 mb-4">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Python</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">smtplib</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">email.mime</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">pandas</span>
-                    </div>
-                    <a href="https://github.com/JeelKakadiya3240/Email-Automail" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-900 dark:text-gray-400 font-semibold hover:gap-3 transition-all text-sm group">
-                        Repository <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
-
-                <!-- AI Voice Order Assistant -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 p-6 flex flex-col">
-                    <div class="flex items-start justify-between mb-3 gap-3">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">AI / Voice</span>
-                        <span class="text-xs font-medium text-gray-400 dark:text-gray-500">Personal</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">AI Voice Order Assistant</h3>
-                    <p class="text-gray-900 dark:text-gray-400 font-medium text-sm mb-3">Restaurant Order &amp; Support System</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        AI voice assistant that takes orders over the phone, handles customer requests, and performs database operations.
-                        Pending orders are visible in real time to the restaurant handling person for seamless fulfillment.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5 mb-4">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Voice AI</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Real-time DB</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Live Dashboard</span>
-                    </div>
-                    <a href="https://github.com/JeelKakadiya3240/Res_AI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-900 dark:text-gray-400 font-semibold hover:gap-3 transition-all text-sm group">
-                        Repository <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
-
-                <!-- Cypress CMS Hospital Benchmarks -->
-                <div class="stagger-item card-3d bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-700 p-6 flex flex-col">
-                    <div class="flex items-start justify-between mb-3 gap-3">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">Data &amp; Analytics</span>
-                        <span class="text-xs font-medium text-gray-400 dark:text-gray-500">Cypress Bridge</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Cypress Hospital Benchmarks</h3>
-                    <p class="text-gray-900 dark:text-gray-400 font-medium text-sm mb-3">USA CMS Data &amp; Analytics</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                        Ingests USA CMS (Centers for Medicare &amp; Medicaid Services) data via a GitHub-hosted pipeline that runs monthly.
-                        Data is transformed and stored in a database, with a dashboard for users to view hospital benchmark performance metrics.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5 mb-4">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">GitHub Actions</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">ETL</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Supabase</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-800 border border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">Dashboard</span>
-                    </div>
-                    <a href="https://www.cypressbridge.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-900 dark:text-gray-400 font-semibold hover:gap-3 transition-all text-sm group">
-                        Project Overview <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
+        <div style="margin-top:60px">
+          <a href="https://www.lokellist.com" target="_blank" rel="noopener noreferrer" class="proj-row stagger-item grid-proj-row" style="display:grid; grid-template-columns:64px 1fr 300px; gap:40px; align-items:start; padding:38px 0; border-top:1px solid rgba(255,255,255,0.12); color:#ffffff">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#41c9b4; padding-top:8px">01</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+                <h3 style="font-size:clamp(28px,4vw,38px); font-weight:700; letter-spacing:-0.035em; margin:0; color:#ffffff">Lokellist</h3>
+                <span style="font-size:12px; font-family:'IBM Plex Mono',monospace; color:#41c9b4; border:1px solid rgba(65,201,180,0.35); padding:4px 9px; border-radius:999px">Live</span>
+              </div>
+              <div style="font-size:17px; color:#98a1ac; margin-top:10px">Real Estate &amp; Property Listings Platform &middot; Web App</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">React &nbsp;/&nbsp; Node.js &nbsp;/&nbsp; REST APIs &nbsp;/&nbsp; Authentication</div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-reveal py-20 bg-white dark:bg-gray-900">
-      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-base text-gray-900 dark:text-gray-400 font-semibold tracking-wide uppercase">Contact</h2>
-          <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl font-display">
-            Let&rsquo;s build something together
-          </p>
-          <p class="mt-4 text-lg text-gray-500 dark:text-gray-300 max-w-xl mx-auto">
-            I&rsquo;m always open to new opportunities and collaborations.
-          </p>
-        </div>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-          <a
-            href="https://www.linkedin.com/in/jeelkakadiya/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hero-cta-primary inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-200 group"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
-            Connect on LinkedIn
+            <div>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">A platform for browsing and managing property listings, connecting buyers, agents, and sellers &mdash; built end to end with secure authentication.</p>
+              <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Project overview <span style="color:#41c9b4">&#8594;</span></span>
+            </div>
           </a>
-          <a
-            href="mailto:jkakadi1@asu.edu"
-            class="hero-cta-secondary inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-200 group"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-            Email Me
+
+          <a href="https://dartcms.apps.asu.edu" target="_blank" rel="noopener noreferrer" class="proj-row stagger-item grid-proj-row" style="display:grid; grid-template-columns:64px 1fr 300px; gap:40px; align-items:start; padding:38px 0; border-top:1px solid rgba(255,255,255,0.12); color:#ffffff">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#41c9b4; padding-top:8px">02</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+                <h3 style="font-size:clamp(28px,4vw,38px); font-weight:700; letter-spacing:-0.035em; margin:0; color:#ffffff">Smart DART</h3>
+                <span style="font-size:12px; font-family:'IBM Plex Mono',monospace; color:#98a1ac; border:1px solid rgba(255,255,255,0.18); padding:4px 9px; border-radius:999px">ASU</span>
+              </div>
+              <div style="font-size:17px; color:#98a1ac; margin-top:10px">Campus Ride Management &middot; Web App</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">React &nbsp;/&nbsp; Vite &nbsp;/&nbsp; AWS Lambda &nbsp;/&nbsp; API Gateway &nbsp;/&nbsp; Terraform</div>
+            </div>
+            <div>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">On-campus golf cart ride management for approved riders &mdash; a scalable system for riders, drivers, carts, and schedules with secure ASU authentication.</p>
+              <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Project overview <span style="color:#41c9b4">&#8594;</span></span>
+            </div>
+          </a>
+
+          <a href="https://github.com/JeelKakadiya3240/Professional_Resume_Builder" target="_blank" rel="noopener noreferrer" class="proj-row stagger-item grid-proj-row" style="display:grid; grid-template-columns:64px 1fr 300px; gap:40px; align-items:start; padding:38px 0; border-top:1px solid rgba(255,255,255,0.12); color:#ffffff">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#41c9b4; padding-top:8px">03</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+                <h3 style="font-size:clamp(28px,4vw,38px); font-weight:700; letter-spacing:-0.035em; margin:0; color:#ffffff">Resume.io</h3>
+                <span style="font-size:12px; font-family:'IBM Plex Mono',monospace; color:#98a1ac; border:1px solid rgba(255,255,255,0.18); padding:4px 9px; border-radius:999px">AI / ML</span>
+              </div>
+              <div style="font-size:17px; color:#98a1ac; margin-top:10px">AI-Powered Resume Analysis &middot; Personal</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">Python &nbsp;/&nbsp; FastAPI &nbsp;/&nbsp; React &nbsp;/&nbsp; AWS &nbsp;/&nbsp; Docker &nbsp;/&nbsp; GitHub Actions</div>
+            </div>
+            <div>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">Resume scoring with NLP (BERT, TF-IDF), Redis caching for 40% faster responses, and serverless deployment on AWS.</p>
+              <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Repository <span style="color:#41c9b4">&#8594;</span></span>
+            </div>
+          </a>
+
+          <a href="https://github.com/JeelKakadiya3240/Res_AI" target="_blank" rel="noopener noreferrer" class="proj-row stagger-item grid-proj-row" style="display:grid; grid-template-columns:64px 1fr 300px; gap:40px; align-items:start; padding:38px 0; border-top:1px solid rgba(255,255,255,0.12); color:#ffffff">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#41c9b4; padding-top:8px">04</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+                <h3 style="font-size:clamp(28px,4vw,38px); font-weight:700; letter-spacing:-0.035em; margin:0; color:#ffffff">AI Voice Order Assistant</h3>
+                <span style="font-size:12px; font-family:'IBM Plex Mono',monospace; color:#98a1ac; border:1px solid rgba(255,255,255,0.18); padding:4px 9px; border-radius:999px">AI / Voice</span>
+              </div>
+              <div style="font-size:17px; color:#98a1ac; margin-top:10px">Restaurant Order &amp; Support System &middot; Personal</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">Voice AI &nbsp;/&nbsp; Real-time DB &nbsp;/&nbsp; Live Dashboard</div>
+            </div>
+            <div>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">An AI voice assistant that takes phone orders, handles requests, and runs database operations &mdash; pending orders surface in real time to restaurant staff.</p>
+              <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Repository <span style="color:#41c9b4">&#8594;</span></span>
+            </div>
+          </a>
+
+          <a href="https://github.com/JeelKakadiya3240/Email-Automail" target="_blank" rel="noopener noreferrer" class="proj-row stagger-item grid-proj-row" style="display:grid; grid-template-columns:64px 1fr 300px; gap:40px; align-items:start; padding:38px 0; border-top:1px solid rgba(255,255,255,0.12); color:#ffffff">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#41c9b4; padding-top:8px">05</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+                <h3 style="font-size:clamp(28px,4vw,38px); font-weight:700; letter-spacing:-0.035em; margin:0; color:#ffffff">Email Automation Script</h3>
+                <span style="font-size:12px; font-family:'IBM Plex Mono',monospace; color:#98a1ac; border:1px solid rgba(255,255,255,0.18); padding:4px 9px; border-radius:999px">Tool</span>
+              </div>
+              <div style="font-size:17px; color:#98a1ac; margin-top:10px">Bulk Email Tool &middot; Personal</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">Python &nbsp;/&nbsp; smtplib &nbsp;/&nbsp; email.mime &nbsp;/&nbsp; pandas</div>
+            </div>
+            <div>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">Personalized email sends from an Excel list &mdash; 3,000+ messages over Gmail SMTP with TLS for secure delivery.</p>
+              <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Repository <span style="color:#41c9b4">&#8594;</span></span>
+            </div>
+          </a>
+
+          <a href="https://www.cypressbridge.dev/" target="_blank" rel="noopener noreferrer" class="proj-row stagger-item grid-proj-row" style="display:grid; grid-template-columns:64px 1fr 300px; gap:40px; align-items:start; padding:38px 0; border-top:1px solid rgba(255,255,255,0.12); border-bottom:1px solid rgba(255,255,255,0.12); color:#ffffff">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#41c9b4; padding-top:8px">06</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+                <h3 style="font-size:clamp(28px,4vw,38px); font-weight:700; letter-spacing:-0.035em; margin:0; color:#ffffff">Cypress Hospital Benchmarks</h3>
+                <span style="font-size:12px; font-family:'IBM Plex Mono',monospace; color:#98a1ac; border:1px solid rgba(255,255,255,0.18); padding:4px 9px; border-radius:999px">Data</span>
+              </div>
+              <div style="font-size:17px; color:#98a1ac; margin-top:10px">USA CMS Data &amp; Analytics &middot; Cypress Bridge</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">GitHub Actions &nbsp;/&nbsp; ETL &nbsp;/&nbsp; Supabase &nbsp;/&nbsp; Dashboard</div>
+            </div>
+            <div>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">Ingests USA CMS data via a monthly GitHub-hosted pipeline &mdash; transformed and stored with a dashboard for hospital benchmark performance metrics.</p>
+              <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Project overview <span style="color:#41c9b4">&#8594;</span></span>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-50 dark:bg-gray-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-base text-gray-500 dark:text-gray-300">
-                    &copy; 2026 Jeel Kakadiya. All rights reserved.
-                </p>
-            </div>
+    <!-- ===== CONTACT (redesign) ===== -->
+    <section id="contact" class="rd sec-pad" style="background:#ffffff; padding:120px 24px 90px; font-family:'Poppins',system-ui,sans-serif">
+      <div class="grid-contact" style="max-width:1216px; margin:0 auto; display:grid; grid-template-columns:1fr 400px; gap:80px; align-items:end">
+        <div class="stagger-item">
+          <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">
+            <span style="color:#0e7c6f">05</span>
+            <span style="width:26px; height:1px; background:#d8dce1"></span>Contact
+          </div>
+          <h2 style="font-size:clamp(40px,7vw,72px); line-height:1.02; font-weight:800; letter-spacing:-0.04em; margin:24px 0 0; color:#101720">Let&rsquo;s build something together<span style="color:#0e7c6f">.</span></h2>
+          <p style="font-size:18px; color:#5c6470; margin:24px 0 0">Open to new opportunities and collaborations &mdash; currently based in Tempe, AZ.</p>
         </div>
+        <div class="stagger-item" style="display:grid; gap:14px">
+          <a href="https://www.linkedin.com/in/jeelkakadiya/" target="_blank" rel="noopener noreferrer" class="contact-btn-dark" style="display:flex; align-items:center; justify-content:space-between; font-size:16px; font-weight:600; padding:20px 26px; border-radius:16px; background:#0f1720; color:#ffffff">Connect on LinkedIn <span>&#8594;</span></a>
+          <a href="mailto:jkakadi1@asu.edu" class="contact-btn-outline" style="display:flex; align-items:center; justify-content:space-between; font-size:16px; font-weight:600; padding:20px 26px; border-radius:16px; background:#ffffff; color:#101720; border:1px solid #e2e5e9">Email me <span>&#8594;</span></a>
+          <a href="https://github.com/JeelKakadiya3240" target="_blank" rel="noopener noreferrer" class="contact-btn-outline" style="display:flex; align-items:center; justify-content:space-between; font-size:16px; font-weight:600; padding:20px 26px; border-radius:16px; background:#ffffff; color:#101720; border:1px solid #e2e5e9">GitHub <span>&#8594;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER (redesign) ===== -->
+    <footer class="rd" style="background:#ffffff; border-top:1px solid #e5e8ec; padding:28px 24px; font-family:'Poppins',system-ui,sans-serif">
+      <div class="footer-inner" style="max-width:1216px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; font-size:14px; color:#8d949e">
+        <span>&copy; 2026 Jeel Kakadiya. All rights reserved.</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase">Built &amp; designed by Jeel</span>
+      </div>
     </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
