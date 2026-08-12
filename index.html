@@ -364,6 +364,12 @@
         .rd .contact-btn-outline { transition: border-color .2s ease, color .2s ease; }
         .rd .contact-btn-outline:hover { border-color:#0e7c6f; color:#0e7c6f; }
 
+        /* Freelance section */
+        .rd .fl-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+        .rd .fl-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px -20px rgba(16,23,32,0.22); border-color: rgba(14,124,111,0.28); }
+        .rd .fl-start { transition: background .2s ease, color .2s ease, transform .2s ease; }
+        .rd .fl-start:hover { background:#0e7c6f; color:#ffffff; transform: translateX(2px); }
+
         @media (max-width: 960px) {
             .rd .grid-head { grid-template-columns:1fr !important; gap:24px !important; align-items:start !important; }
             .rd .about-cols { grid-template-columns:1fr !important; gap:32px !important; }
@@ -372,8 +378,15 @@
             .rd .grid-proj-row { grid-template-columns:1fr !important; gap:14px !important; }
             .rd .grid-skill-wrap { grid-template-columns:1fr !important; column-gap:0 !important; }
             .rd .grid-contact { grid-template-columns:1fr !important; gap:36px !important; }
+            .rd .grid-fl-head { grid-template-columns:1fr !important; gap:28px !important; }
+            .rd .grid-fl-head .fl-price { text-align:left !important; }
+            .rd .grid-fl-cards { grid-template-columns:1fr 1fr !important; }
+            .rd .grid-fl-banner { grid-template-columns:1fr !important; gap:24px !important; }
             .rd.sec-pad { padding-top:72px !important; padding-bottom:72px !important; }
             .rd .footer-inner { flex-direction:column !important; gap:10px !important; text-align:center; }
+        }
+        @media (max-width: 560px) {
+            .rd .grid-fl-cards { grid-template-columns:1fr !important; }
         }
     </style>
 </head>
@@ -396,6 +409,7 @@
                         <a href="#experience" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experience</a>
                         <a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
                         <a href="#projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#freelance" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Freelance</a>
                         <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
@@ -423,6 +437,7 @@
                 <a href="#experience" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experience</a>
                 <a href="#skills" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
                 <a href="#projects" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#freelance" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Freelance</a>
                 <a href="#contact" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
             </div>
         </div>
@@ -435,9 +450,19 @@
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- Left: Text & CTAs -->
                 <div class="order-2 lg:order-1 text-center lg:text-left">
-                    <div id="hero-greeting" class="hero-entrance hero-greeting-pill mb-6">
-                        <span>Hey there!</span>
-                        <span class="hero-wave">👋</span>
+                    <div class="flex flex-wrap items-center gap-3 mb-6">
+                        <div id="hero-greeting" class="hero-entrance hero-greeting-pill">
+                            <span>Hey there!</span>
+                            <span class="hero-wave">👋</span>
+                        </div>
+                        <a href="#freelance" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-900 dark:text-white shadow-sm hover:border-teal-400 dark:hover:border-teal-500 transition-colors">
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full" style="background:#0e7c6f; opacity:0.5"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5" style="background:#0e7c6f"></span>
+                            </span>
+                            Available for freelance
+                            <span class="font-normal text-gray-400 dark:text-gray-500">&middot; $30/hr</span>
+                        </a>
                     </div>
 
                     <h1 id="hero-headline" class="hero-entrance font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.05] mb-4">
@@ -574,14 +599,14 @@
             </div>
             <h2 style="font-size:clamp(34px,5vw,46px); line-height:1.06; font-weight:600; letter-spacing:-0.035em; margin:20px 0 0; color:#101720">Where I&rsquo;ve<br>worked</h2>
           </div>
-          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#5c6470; margin:0 0 8px; max-width:520px">Four roles across product engineering, platform APIs, and data infrastructure &mdash; from a research university to early-stage teams.</p>
+          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#5c6470; margin:0 0 8px; max-width:520px">Four roles across product engineering, platform APIs, and data infrastructure, from a research university to early-stage teams.</p>
         </div>
 
         <div style="margin-top:64px; display:grid; gap:0">
           <!-- RemoGPT -->
           <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea">
             <div>
-              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#0b675c; background:#d9f2ea; padding:6px 12px; border-radius:999px; white-space:nowrap">Jun 2026 &mdash; Present</div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#0b675c; background:#d9f2ea; padding:6px 12px; border-radius:999px; white-space:nowrap">Jun 2026 &ndash; Present</div>
               <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">RemoGPT&trade;</div>
               <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Part-time<br>Tempe, AZ &middot; Hybrid</div>
             </div>
@@ -599,7 +624,7 @@
           <!-- Cypress Bridge -->
           <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea">
             <div>
-              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">Jan 2026 &mdash; May 2026</div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">Jan 2026 &ndash; May 2026</div>
               <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">Cypress Bridge Group, LLC</div>
               <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Internship<br>Remote, AZ</div>
             </div>
@@ -616,7 +641,7 @@
           <!-- ASU -->
           <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea">
             <div>
-              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">May 2025 &mdash; May 2026</div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">May 2025 &ndash; May 2026</div>
               <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">Arizona State University</div>
               <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Tempe, AZ</div>
             </div>
@@ -634,7 +659,7 @@
           <!-- VBI -->
           <div class="exp-row stagger-item grid-exp-row" style="display:grid; grid-template-columns:260px 1fr; gap:48px; padding:40px 0; border-top:1px solid #e2e5ea; border-bottom:1px solid #e2e5ea">
             <div>
-              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">Jan 2024 &mdash; Aug 2024</div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5c6470; background:#eceff2; padding:6px 12px; border-radius:999px; white-space:nowrap">Jan 2024 &ndash; Aug 2024</div>
               <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:18px; color:#101720">VBI Infotech</div>
               <div style="font-size:15px; color:#6b7480; margin-top:6px; line-height:1.55">Internship<br>Surat, India</div>
             </div>
@@ -662,7 +687,7 @@
             </div>
             <h2 style="font-size:clamp(34px,5vw,46px); line-height:1.06; font-weight:600; letter-spacing:-0.035em; margin:20px 0 0; color:#101720">Technical<br>expertise</h2>
           </div>
-          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#5c6470; margin:0 0 8px; max-width:520px">The toolkit I reach for &mdash; built through graduate coursework and shipping production software.</p>
+          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#5c6470; margin:0 0 8px; max-width:520px">The toolkit I reach for, built through graduate coursework and shipping production software.</p>
         </div>
 
         <div class="grid-skill-wrap" style="margin-top:56px; display:grid; grid-template-columns:1fr 1fr; column-gap:80px">
@@ -732,7 +757,7 @@
               <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">React &nbsp;/&nbsp; Node.js &nbsp;/&nbsp; REST APIs &nbsp;/&nbsp; Authentication</div>
             </div>
             <div>
-              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">A platform for browsing and managing property listings, connecting buyers, agents, and sellers &mdash; built end to end with secure authentication.</p>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">A platform for browsing and managing property listings, connecting buyers, agents, and sellers, built end to end with secure authentication.</p>
               <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Project overview <span style="color:#41c9b4">&#8594;</span></span>
             </div>
           </a>
@@ -748,7 +773,7 @@
               <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">React &nbsp;/&nbsp; Vite &nbsp;/&nbsp; AWS Lambda &nbsp;/&nbsp; API Gateway &nbsp;/&nbsp; Terraform</div>
             </div>
             <div>
-              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">On-campus golf cart ride management for approved riders &mdash; a scalable system for riders, drivers, carts, and schedules with secure ASU authentication.</p>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">On-campus golf cart ride management for approved riders, a scalable system for riders, drivers, carts, and schedules with secure ASU authentication.</p>
               <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Project overview <span style="color:#41c9b4">&#8594;</span></span>
             </div>
           </a>
@@ -780,7 +805,7 @@
               <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">Voice AI &nbsp;/&nbsp; Real-time DB &nbsp;/&nbsp; Live Dashboard</div>
             </div>
             <div>
-              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">An AI voice assistant that takes phone orders, handles requests, and runs database operations &mdash; pending orders surface in real time to restaurant staff.</p>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">An AI voice assistant that takes phone orders, handles requests, and runs database operations, pending orders surface in real time to restaurant staff.</p>
               <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Repository <span style="color:#41c9b4">&#8594;</span></span>
             </div>
           </a>
@@ -796,7 +821,7 @@
               <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">Python &nbsp;/&nbsp; smtplib &nbsp;/&nbsp; email.mime &nbsp;/&nbsp; pandas</div>
             </div>
             <div>
-              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">Personalized email sends from an Excel list &mdash; 3,000+ messages over Gmail SMTP with TLS for secure delivery.</p>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">Personalized email sends from an Excel list, 3,000+ messages over Gmail SMTP with TLS for secure delivery.</p>
               <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Repository <span style="color:#41c9b4">&#8594;</span></span>
             </div>
           </a>
@@ -812,10 +837,81 @@
               <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#6f7a87; margin-top:18px">GitHub Actions &nbsp;/&nbsp; ETL &nbsp;/&nbsp; Supabase &nbsp;/&nbsp; Dashboard</div>
             </div>
             <div>
-              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">Ingests USA CMS data via a monthly GitHub-hosted pipeline &mdash; transformed and stored with a dashboard for hospital benchmark performance metrics.</p>
+              <p style="font-size:16px; line-height:1.65; color:#98a1ac; margin:0">Ingests USA CMS data via a monthly GitHub-hosted pipeline, transformed and stored with a dashboard for hospital benchmark performance metrics.</p>
               <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#ffffff; margin-top:16px">Project overview <span style="color:#41c9b4">&#8594;</span></span>
             </div>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FREELANCE (redesign) ===== -->
+    <section id="freelance" class="rd sec-pad" style="background:#f5f6f8; padding:110px 24px 100px; font-family:'Poppins',system-ui,sans-serif">
+      <div style="max-width:1216px; margin:0 auto">
+        <div class="grid-fl-head" style="display:grid; grid-template-columns:360px 1fr auto; gap:64px; align-items:start">
+          <div class="stagger-item">
+            <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">
+              <span style="color:#0e7c6f">05</span>
+              <span style="width:26px; height:1px; background:#d8dce1"></span>Freelance
+            </div>
+            <h2 style="font-size:clamp(34px,5vw,46px); line-height:1.06; font-weight:600; letter-spacing:-0.035em; margin:20px 0 0; color:#101720">Available<br>for hire</h2>
+          </div>
+          <p class="stagger-item" style="font-size:17px; line-height:1.7; color:#5c6470; margin:0; max-width:560px">Taking on freelance work alongside full-time engineering, scoped projects or ongoing support, billed hourly with no minimum retainer.</p>
+          <div class="stagger-item fl-price" style="text-align:right; white-space:nowrap">
+            <span style="font-size:clamp(44px,6vw,64px); font-weight:800; letter-spacing:-0.03em; color:#101720">$30</span><span style="font-family:'IBM Plex Mono',monospace; font-size:15px; color:#6b7480"> / hour</span>
+          </div>
+        </div>
+
+        <div class="grid-fl-cards" style="margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px">
+          <!-- AI Workflows -->
+          <div class="fl-card stagger-item" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+            <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.2"></circle><circle cx="18" cy="6" r="2.2"></circle><circle cx="18" cy="18" r="2.2"></circle><path d="M8 11l8-4M8 13l8 4"></path></svg>
+            </div>
+            <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">AI Workflows</h3>
+            <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">LLM-powered automations, RAG pipelines, and MCP integrations wired into the tools your team already uses.</p>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#98a1ac; margin-top:22px">LLMs &middot; RAG &middot; MCP</div>
+          </div>
+          <!-- CRM Builds -->
+          <div class="fl-card stagger-item" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+            <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"></circle><path d="M3.5 19c0-2.9 2.4-4.6 5.5-4.6"></path><path d="M15 9h5M15 12.5h5M15 16h5"></path></svg>
+            </div>
+            <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">CRM Builds</h3>
+            <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Custom pipelines, contact management, and role-based dashboards, or clean integrations with the CRM you run today.</p>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#98a1ac; margin-top:22px">Supabase &middot; Postgres &middot; Auth</div>
+          </div>
+          <!-- Web App Builds -->
+          <div class="fl-card stagger-item" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+            <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.4"></rect><path d="M3 9h18"></path><circle cx="6.2" cy="6.8" r="0.5" fill="currentColor" stroke="none"></circle><circle cx="8.4" cy="6.8" r="0.5" fill="currentColor" stroke="none"></circle></svg>
+            </div>
+            <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">Web App Builds</h3>
+            <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Full-stack products from schema to deploy, React/Next.js front ends on FastAPI or Node APIs, shipped on AWS.</p>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#98a1ac; margin-top:22px">Next.js &middot; FastAPI &middot; AWS</div>
+          </div>
+          <!-- MLS Data Handling -->
+          <div class="fl-card stagger-item" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+            <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg>
+            </div>
+            <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">MLS Data Handling</h3>
+            <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">RESO/MLS feed ingestion, normalization, and sync jobs that keep listing data accurate and searchable.</p>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#98a1ac; margin-top:22px">ETL &middot; RESO &middot; Scheduled sync</div>
+          </div>
+        </div>
+
+        <div class="grid-fl-banner stagger-item" style="margin-top:28px; background:#10151b; border-radius:24px; padding:42px 44px; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:start">
+          <div>
+            <div style="font-size:24px; font-weight:700; letter-spacing:-0.02em; color:#ffffff">$30 / hour, flat</div>
+            <div style="font-size:16px; color:#98a1ac; margin-top:8px">Same rate for every service, no tiers, no markup.</div>
+            <a href="#contact" class="fl-start" style="display:inline-flex; align-items:center; gap:10px; margin-top:34px; background:#ffffff; color:#101720; font-size:16px; font-weight:600; padding:16px 28px; border-radius:999px">Start a project <span>&#8594;</span></a>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:22px 32px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#7d8794; justify-content:flex-end">
+            <span>Remote worldwide</span>
+            <span>Weekly invoicing</span>
+            <span>Free 30-min scoping call</span>
+          </div>
         </div>
       </div>
     </section>
@@ -825,11 +921,11 @@
       <div class="grid-contact" style="max-width:1216px; margin:0 auto; display:grid; grid-template-columns:1fr 400px; gap:80px; align-items:end">
         <div class="stagger-item">
           <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">
-            <span style="color:#0e7c6f">05</span>
+            <span style="color:#0e7c6f">06</span>
             <span style="width:26px; height:1px; background:#d8dce1"></span>Contact
           </div>
           <h2 style="font-size:clamp(40px,7vw,72px); line-height:1.02; font-weight:600; letter-spacing:-0.04em; margin:24px 0 0; color:#101720">Let&rsquo;s build something together<span style="color:#0e7c6f">.</span></h2>
-          <p style="font-size:18px; color:#5c6470; margin:24px 0 0">Open to new opportunities and collaborations &mdash; currently based in Tempe, AZ.</p>
+          <p style="font-size:18px; color:#5c6470; margin:24px 0 0">Open to new opportunities and collaborations, currently based in Tempe, AZ.</p>
         </div>
         <div class="stagger-item" style="display:grid; gap:14px">
           <a href="https://www.linkedin.com/in/jeelkakadiya/" target="_blank" rel="noopener noreferrer" class="contact-btn-dark" style="display:flex; align-items:center; justify-content:space-between; font-size:16px; font-weight:600; padding:20px 26px; border-radius:16px; background:#0f1720; color:#ffffff">Connect on LinkedIn <span>&#8594;</span></a>
