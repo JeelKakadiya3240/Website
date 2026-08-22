@@ -44,8 +44,8 @@ module.exports = async (req, res) => {
       return;
     }
 
-    var to = process.env.CONTACT_TO || 'jkakadi1@asu.edu';
-    var from = process.env.CONTACT_FROM || 'Portfolio Contact <onboarding@resend.dev>';
+    var to = process.env.CONTACT_TO || 'jeelkakadiya11@gmail.com';
+    var from = process.env.CONTACT_FROM || 'Portfolio Contact <contact@jeelkakadiya.com>';
 
     var resp = await fetch('https://api.resend.com/emails', {
       method: 'POST',
