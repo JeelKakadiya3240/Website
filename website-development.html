@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Development — Jeel Kakadiya</title>
+<meta name="description" content="Freelance website design and development by Jeel Kakadiya — fast, secure, responsive, and search-optimized websites that turn visitors into customers. Flat $30/hr.">
+<link rel="canonical" href="https://www.jeelkakadiya.com/website-development">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5BG9Y5WFEK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5BG9Y5WFEK');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: Poppins, system-ui, sans-serif; background: #ffffff; color: #101720; -webkit-font-smoothing: antialiased; }
+  a { color: #0e7c6f; text-decoration: none; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  img { max-width: 100%; }
+  h1, h2, h3 { font-family: 'Poppins', system-ui, sans-serif; }
+
+  .nav-link { color: #3f4855; transition: color .2s ease; }
+  .nav-link:hover { color: #0e7c6f; }
+
+  .btn-primary { background:#0f1720; color:#ffffff; transition: background .2s ease, color .2s ease, transform .2s ease; }
+  .btn-primary:hover { background:#0e7c6f; color:#ffffff; transform: translateX(2px); }
+  .btn-secondary { background:#ffffff; color:#101720; border:1px solid #e2e5e9; transition: border-color .2s ease, color .2s ease; }
+  .btn-secondary:hover { border-color:#0e7c6f; color:#0e7c6f; }
+
+  .svc-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .svc-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px -20px rgba(16,23,32,0.2); border-color: rgba(14,124,111,0.28); }
+
+  .nav-mobile-btn { display:none; }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:block; }
+
+  @media (max-width: 960px) {
+    .nav-links-desktop { display:none !important; }
+    .nav-mobile-btn { display:inline-flex !important; }
+    .grid-head { grid-template-columns:1fr !important; gap:28px !important; align-items:start !important; }
+    .grid-svc { grid-template-columns:1fr 1fr !important; }
+    .grid-detail { grid-template-columns:1fr !important; gap:16px !important; }
+    .grid-cta { grid-template-columns:1fr !important; gap:24px !important; }
+    .sec-pad { padding-top:72px !important; padding-bottom:72px !important; }
+    .footer-inner { flex-direction:column !important; gap:10px !important; text-align:center; }
+  }
+  @media (max-width: 560px) {
+    .grid-svc { grid-template-columns:1fr !important; }
+  }
+</style>
+</head>
+<body>
+<div style="width:100%; overflow-x:hidden">
+
+<!-- NAV -->
+<nav style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:blur(10px); border-bottom:1px solid #ececec">
+  <div style="max-width:1216px; margin:0 auto; padding:0 24px; height:62px; display:flex; align-items:center; justify-content:space-between">
+    <a href="/" style="font-size:22px; font-weight:700; letter-spacing:-0.02em; color:#101720; display:flex; align-items:baseline; gap:6px">Portfolio<span style="width:7px; height:7px; border-radius:50%; background:#0e7c6f; display:inline-block"></span></a>
+    <div class="nav-links-desktop" style="display:flex; align-items:center; gap:40px; font-size:15px">
+      <a href="/#home" class="nav-link">Home</a>
+      <a href="/#about" class="nav-link">About</a>
+      <a href="/#projects" class="nav-link">Projects</a>
+      <a href="/#freelance" class="nav-link">Freelance</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+    </div>
+    <button id="mobile-menu-btn" class="nav-mobile-btn" aria-label="Open menu" style="align-items:center; justify-content:center; width:42px; height:42px; border:1px solid #e6e8ec; border-radius:12px; background:#fff; color:#1a2230; cursor:pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" style="border-top:1px solid #ececec; background:#fff">
+    <div style="max-width:1216px; margin:0 auto; padding:10px 24px 16px; display:grid; gap:4px; font-size:16px">
+      <a href="/#home" class="nav-link" style="padding:10px 4px">Home</a>
+      <a href="/#about" class="nav-link" style="padding:10px 4px">About</a>
+      <a href="/#projects" class="nav-link" style="padding:10px 4px">Projects</a>
+      <a href="/#freelance" class="nav-link" style="padding:10px 4px">Freelance</a>
+      <a href="/#contact" class="nav-link" style="padding:10px 4px">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="sec-pad" style="background:linear-gradient(155deg,#eaf6f1 0%,#fbfbfa 42%,#f8f6f3 100%); padding:100px 24px 90px">
+  <div style="max-width:900px; margin:0 auto; text-align:center">
+    <div style="display:inline-flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#0b675c">
+      <span style="width:26px; height:1px; background:#7fcdb9"></span>Website Development<span style="width:26px; height:1px; background:#7fcdb9"></span>
+    </div>
+    <h1 style="font-size:clamp(38px,6.5vw,62px); line-height:1.05; font-weight:700; letter-spacing:-0.035em; margin:22px 0 0; color:#101720">If you&rsquo;re not online,<br>you&rsquo;re closed.</h1>
+    <p style="font-size:clamp(17px,2.2vw,20px); line-height:1.6; color:#4b5560; max-width:640px; margin:24px auto 0">Your website is often the first touchpoint for your brand. I build high-quality websites that are user-friendly, search-optimized, secure, and responsive, so your business shows up and turns visitors into customers.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:36px">
+      <a href="/#contact" class="btn-primary" style="display:inline-flex; align-items:center; gap:10px; font-size:16px; font-weight:600; padding:16px 30px; border-radius:999px; box-shadow:0 10px 24px rgba(15,23,32,0.18)">Start your project <span>&#8594;</span></a>
+      <a href="/#freelance" class="btn-secondary" style="display:inline-flex; align-items:center; gap:10px; font-size:16px; font-weight:600; padding:16px 30px; border-radius:999px">See pricing &middot; $30/hr</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="sec-pad" style="background:#ffffff; padding:100px 24px">
+  <div class="grid-head" style="max-width:1216px; margin:0 auto; display:grid; grid-template-columns:360px 1fr; gap:80px">
+    <div>
+      <div style="display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">
+        <span style="color:#0e7c6f">Overview</span>
+        <span style="width:26px; height:1px; background:#d8dce1"></span>
+      </div>
+      <h2 style="font-size:clamp(30px,4.4vw,42px); line-height:1.08; font-weight:600; letter-spacing:-0.03em; margin:18px 0 0; color:#101720">Design and development services</h2>
+    </div>
+    <div>
+      <p style="font-size:clamp(19px,2.4vw,26px); line-height:1.45; font-weight:500; letter-spacing:-0.015em; color:#1a2230; margin:0">Your website is usually the most important piece in your marketing toolkit, and often the first touchpoint for someone deciding whether to become your customer. That&rsquo;s too important to <span style="color:#0e7c6f">leave to chance</span>.</p>
+      <p style="font-size:17px; line-height:1.7; color:#5c6470; margin:24px 0 0">I design and build modern, dynamic websites that are visually appealing, secure, responsive, and properly optimized for search, built to make a strong first impression and convert visitors into customers. Everything is built and tested in-house, so I know exactly what goes into your site and how to keep it running safely.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="sec-pad" style="background:#f6f7f9; padding:100px 24px">
+  <div style="max-width:1216px; margin:0 auto">
+    <div style="text-align:center; margin-bottom:48px">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">What&rsquo;s included</div>
+      <h2 style="font-size:clamp(28px,4vw,40px); line-height:1.1; font-weight:600; letter-spacing:-0.03em; margin:14px 0 0; color:#101720">End to end, done right</h2>
+    </div>
+    <div class="grid-svc" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px">
+      <!-- card template repeated -->
+      <div class="svc-card" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+        <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3-3"></path></svg></div>
+        <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">Competitive Research</h3>
+        <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Study your market and competitors so your site stands out for the right reasons.</p>
+      </div>
+      <div class="svc-card" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+        <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 21h8M12 18v3"></path></svg></div>
+        <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">Responsive Design</h3>
+        <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Designed mobile-first and looking sharp on every screen, phone to desktop.</p>
+      </div>
+      <div class="svc-card" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+        <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-3 3 3 3M16 9l3 3-3 3"></path></svg></div>
+        <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">Website Development</h3>
+        <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Clean, modern builds on a live staging environment you can watch come together.</p>
+      </div>
+      <div class="svc-card" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+        <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path></svg></div>
+        <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">Performance Optimization</h3>
+        <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Fast load times and lean code, because speed keeps visitors and helps you rank.</p>
+      </div>
+      <div class="svc-card" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+        <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2"></path></svg></div>
+        <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">Analytics Tracking</h3>
+        <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Know what&rsquo;s working with proper analytics and conversion tracking wired in.</p>
+      </div>
+      <div class="svc-card" style="background:#ffffff; border:1px solid #e7e9ec; border-radius:20px; padding:28px 26px">
+        <div style="width:44px; height:44px; border-radius:12px; background:#e4f3ed; display:flex; align-items:center; justify-content:center; color:#0e7c6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.9 1.09V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15H4a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 6 9.4l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 12 4.6V4a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 2.9 1.09l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 12H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
+        <h3 style="font-size:19px; font-weight:600; letter-spacing:-0.015em; margin:20px 0 0; color:#101720">Ongoing Maintenance</h3>
+        <p style="font-size:15px; line-height:1.6; color:#5c6470; margin:12px 0 0">Updates, backups, and security so your site keeps running smoothly after launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL SECTIONS -->
+<section class="sec-pad" style="background:#ffffff; padding:100px 24px">
+  <div style="max-width:1216px; margin:0 auto; display:grid; gap:0">
+    <!-- Design -->
+    <div class="grid-detail" style="display:grid; grid-template-columns:280px 1fr; gap:56px; padding:44px 0; border-top:1px solid #e5e8ec">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#0e7c6f">01</div>
+        <h2 style="font-size:clamp(24px,3vw,30px); font-weight:600; letter-spacing:-0.025em; margin:12px 0 0; color:#101720">Website Design</h2>
+      </div>
+      <p style="font-size:17px; line-height:1.7; color:#4b5560; margin:0">A good website starts with great design. I bring eye-catching, conversion-focused elements into your site and design mobile-first, because mobile is now the dominant way people browse. The goal is a look that fits your brand and gently guides visitors toward taking action.</p>
+    </div>
+    <!-- Development -->
+    <div class="grid-detail" style="display:grid; grid-template-columns:280px 1fr; gap:56px; padding:44px 0; border-top:1px solid #e5e8ec">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#0e7c6f">02</div>
+        <h2 style="font-size:clamp(24px,3vw,30px); font-weight:600; letter-spacing:-0.025em; margin:12px 0 0; color:#101720">Website Development</h2>
+      </div>
+      <p style="font-size:17px; line-height:1.7; color:#4b5560; margin:0">I bring the design to life on a staging environment so you can watch the site come together and test functionality as it&rsquo;s built. All development happens in-house, so I know exactly what goes into your site and how to make sure it works safely and reliably before it goes live.</p>
+    </div>
+    <!-- Optimization -->
+    <div class="grid-detail" style="display:grid; grid-template-columns:280px 1fr; gap:56px; padding:44px 0; border-top:1px solid #e5e8ec">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#0e7c6f">03</div>
+        <h2 style="font-size:clamp(24px,3vw,30px); font-weight:600; letter-spacing:-0.025em; margin:12px 0 0; color:#101720">Website Optimization</h2>
+      </div>
+      <p style="font-size:17px; line-height:1.7; color:#4b5560; margin:0">A great-looking, secure, responsive site matters, and it&rsquo;s just as important that search engines can actually find it. I optimize your site so it loads quickly and contains the content Google and other search engines reward with strong organic placement, so the right people can discover you.</p>
+    </div>
+    <!-- Maintenance -->
+    <div class="grid-detail" style="display:grid; grid-template-columns:280px 1fr; gap:56px; padding:44px 0; border-top:1px solid #e5e8ec; border-bottom:1px solid #e5e8ec">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#0e7c6f">04</div>
+        <h2 style="font-size:clamp(24px,3vw,30px); font-weight:600; letter-spacing:-0.025em; margin:12px 0 0; color:#101720">Website Maintenance</h2>
+      </div>
+      <p style="font-size:17px; line-height:1.7; color:#4b5560; margin:0">Too often a website launches and is left to run without upkeep, which hurts functionality and leaves it vulnerable to bots and other threats. I offer ongoing maintenance and straightforward advice to keep your site up, secure, and running properly, so it keeps working for your brand long after launch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec-pad" style="background:#ffffff; padding:20px 24px 100px">
+  <div class="grid-cta" style="max-width:1216px; margin:0 auto; background:#10151b; border-radius:24px; padding:52px 48px; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center">
+    <div>
+      <h2 style="font-size:clamp(26px,3.4vw,36px); font-weight:600; letter-spacing:-0.025em; margin:0; color:#ffffff">Ready to get online?</h2>
+      <p style="font-size:17px; line-height:1.6; color:#98a1ac; margin:12px 0 0">Tell me about your project and I&rsquo;ll put together a plan. Flat $30/hr, no tiers, no markup.</p>
+    </div>
+    <a href="/#contact" class="btn-primary" style="display:inline-flex; align-items:center; gap:10px; background:#ffffff; color:#101720; font-size:16px; font-weight:600; padding:17px 30px; border-radius:999px; white-space:nowrap">Start your project <span>&#8594;</span></a>
+  </div>
+</section>
+
+<footer style="background:#ffffff; border-top:1px solid #e5e8ec; padding:28px 24px">
+  <div class="footer-inner" style="max-width:1216px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; font-size:14px; color:#8d949e">
+    <span>&copy; 2026 Jeel Kakadiya. All rights reserved.</span>
+    <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase">Built &amp; designed by Jeel</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('mobile-menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', function () { menu.classList.toggle('open'); });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('open'); }); });
+    }
+  })();
+</script>
+</body>
+</html>
