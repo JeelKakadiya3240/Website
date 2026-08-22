@@ -370,6 +370,12 @@
         .rd .fl-start { transition: background .2s ease, color .2s ease, transform .2s ease; }
         .rd .fl-start:hover { background:#0e7c6f; color:#ffffff; transform: translateX(2px); }
 
+        /* Contact form */
+        .rd .cf-input { width:100%; box-sizing:border-box; font-family:'Poppins',system-ui,sans-serif; font-size:15px; color:#101720; background:#ffffff; border:1px solid #dfe3e8; border-radius:12px; padding:13px 15px; outline:none; transition:border-color .2s ease, box-shadow .2s ease; }
+        .rd .cf-input:focus { border-color:#0e7c6f; box-shadow:0 0 0 3px rgba(14,124,111,0.12); }
+        .rd .cf-input::placeholder { color:#9aa2ac; }
+        @media (max-width:560px) { .rd .cf-row { grid-template-columns:1fr !important; } }
+
         @media (max-width: 960px) {
             .rd .grid-head { grid-template-columns:1fr !important; gap:24px !important; align-items:start !important; }
             .rd .about-cols { grid-template-columns:1fr !important; gap:32px !important; }
@@ -933,6 +939,39 @@
           <a href="https://github.com/JeelKakadiya3240" target="_blank" rel="noopener noreferrer" class="contact-btn-outline" style="display:flex; align-items:center; justify-content:space-between; font-size:16px; font-weight:600; padding:20px 26px; border-radius:16px; background:#ffffff; color:#101720; border:1px solid #e2e5e9">GitHub <span>&#8594;</span></a>
         </div>
       </div>
+
+      <!-- Contact form -->
+      <div class="stagger-item" style="max-width:1216px; margin:64px auto 0; border-top:1px solid #e5e8ec; padding-top:52px">
+        <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:14px 40px; justify-content:space-between; margin-bottom:28px">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8d949e">Send a message</div>
+            <h3 style="font-size:clamp(26px,3.4vw,34px); font-weight:600; letter-spacing:-0.02em; margin:14px 0 0; color:#101720">Drop me a line</h3>
+          </div>
+          <p style="font-size:16px; line-height:1.6; color:#5c6470; margin:0; max-width:420px">Tell me a bit about your project or role, and I&rsquo;ll get back to you within a day or two.</p>
+        </div>
+        <form id="contact-form" style="max-width:720px">
+          <div class="cf-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+            <label style="display:block">
+              <span style="display:block; font-size:13px; font-weight:600; color:#404955; margin-bottom:6px">Name</span>
+              <input name="name" type="text" required autocomplete="name" class="cf-input" placeholder="Your name">
+            </label>
+            <label style="display:block">
+              <span style="display:block; font-size:13px; font-weight:600; color:#404955; margin-bottom:6px">Email</span>
+              <input name="email" type="email" required autocomplete="email" class="cf-input" placeholder="you@example.com">
+            </label>
+          </div>
+          <label style="display:block; margin-top:16px">
+            <span style="display:block; font-size:13px; font-weight:600; color:#404955; margin-bottom:6px">Message</span>
+            <textarea name="message" rows="5" required class="cf-input" placeholder="What can I help you build?" style="resize:vertical"></textarea>
+          </label>
+          <!-- honeypot (hidden from humans, catches bots) -->
+          <input name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0">
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:22px">
+            <button type="submit" class="fl-start" style="display:inline-flex; align-items:center; gap:10px; background:#0f1720; color:#ffffff; font-size:16px; font-weight:600; padding:15px 28px; border-radius:999px; border:none; cursor:pointer">Send message <span>&#8594;</span></button>
+            <span id="form-status" role="status" aria-live="polite" style="font-size:15px; color:#5c6470"></span>
+          </div>
+        </form>
+      </div>
     </section>
 
     <!-- ===== FOOTER (redesign) ===== -->
@@ -1103,6 +1142,51 @@
         }
         if (lenis) lenis.on('scroll', onScroll);
         else window.addEventListener('scroll', onScroll, { passive: true });
+    </script>
+
+    <!-- ——— Contact form submit (POSTs to /api/contact, which uses Resend) ——— -->
+    <script>
+        (function () {
+            var form = document.getElementById('contact-form');
+            if (!form) return;
+            var status = document.getElementById('form-status');
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                var btn = form.querySelector('button[type="submit"]');
+                var payload = {
+                    name: form.name.value.trim(),
+                    email: form.email.value.trim(),
+                    message: form.message.value.trim(),
+                    company: form.company.value
+                };
+                status.style.color = '#5c6470';
+                status.textContent = '';
+                var label = btn.innerHTML;
+                btn.disabled = true; btn.style.opacity = '0.7'; btn.innerHTML = 'Sending&hellip;';
+                try {
+                    var r = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    var j = {};
+                    try { j = await r.json(); } catch (e2) {}
+                    if (r.ok && j.ok) {
+                        form.reset();
+                        status.style.color = '#0e7c6f';
+                        status.textContent = 'Thanks! Your message has been sent.';
+                    } else {
+                        status.style.color = '#c0392b';
+                        status.textContent = (j && j.error) || 'Could not send. Please email me directly.';
+                    }
+                } catch (err) {
+                    status.style.color = '#c0392b';
+                    status.textContent = 'Network error. Please email me directly.';
+                } finally {
+                    btn.disabled = false; btn.style.opacity = '1'; btn.innerHTML = label;
+                }
+            });
+        })();
     </script>
 </body>
 </html>
